@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/10 14:22:11 by pnsaka           ###   ########.fr       */
+/*   Created: 2022/11/03 21:07:59 by pnsaka            #+#    #+#             */
+/*   Updated: 2022/11/29 18:22:11 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+char	*ft_strdup(const char *s1)
+{
+	int		i;
+	char	*dest;
+	int		len;
 
-int main( int argc, char **argv);
-
-#endif
+	if (!s1)
+		return (0);
+	len = ft_strlen(s1) + 1;
+	i = 0;
+	dest = (char *)malloc(len * sizeof(char));
+	if (dest == 0)
+	{
+		return (0);
+	}
+	while (s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}

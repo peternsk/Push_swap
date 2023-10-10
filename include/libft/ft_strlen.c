@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/10 14:22:11 by pnsaka           ###   ########.fr       */
+/*   Created: 2022/10/19 12:29:31 by pnsaka            #+#    #+#             */
+/*   Updated: 2022/11/29 17:59:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-int main( int argc, char **argv);
-
-#endif
+	if (!s)
+		return (0);
+	i = -1;
+	while (s[++i])
+		;
+	return (i);
+}

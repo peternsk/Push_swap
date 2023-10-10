@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/10 14:22:11 by pnsaka           ###   ########.fr       */
+/*   Created: 2022/11/03 14:57:47 by pnsaka            #+#    #+#             */
+/*   Updated: 2022/11/29 17:16:36 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
 
-int main( int argc, char **argv);
-
-#endif
+	i = -1;
+	if (!s1 || !s2)
+		return (0);
+	if (n == 0)
+		return (0);
+	while ((s1[++i] || s2[i]) && \
+		(s1[i] == s2[i]) && (i < n - 1))
+		;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}

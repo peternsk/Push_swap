@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/10 14:22:11 by pnsaka           ###   ########.fr       */
+/*   Created: 2022/12/02 10:37:37 by petermalong       #+#    #+#             */
+/*   Updated: 2022/12/06 14:37:00 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*last_node;
 
-int main( int argc, char **argv);
-
-#endif
+	last_node = *lst;
+	if (!lst || !new)
+		return ;
+	if ((*lst) == 0)
+		*lst = new;
+	else
+	{
+		while (last_node->next)
+			last_node = last_node->next;
+		last_node->next = new;
+	}
+}

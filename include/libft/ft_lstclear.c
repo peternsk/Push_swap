@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/10 14:22:11 by pnsaka           ###   ########.fr       */
+/*   Created: 2022/12/03 13:25:43 by petermalong       #+#    #+#             */
+/*   Updated: 2022/12/06 13:52:47 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*clr_node;
 
-int main( int argc, char **argv);
-
-#endif
+	if (!*lst || !del)
+		return ;
+	while (*lst != 0)
+	{
+		clr_node = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = clr_node;
+	}
+	(*lst) = 0;
+}

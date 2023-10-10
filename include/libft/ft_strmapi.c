@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/10 14:22:11 by pnsaka           ###   ########.fr       */
+/*   Created: 2022/11/23 13:06:41 by pnsaka            #+#    #+#             */
+/*   Updated: 2022/12/06 14:51:36 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		i;
+	char	*s_dup;
 
-int main( int argc, char **argv);
-
-#endif
+	if (!s)
+		return (0);
+	i = -1;
+	s_dup = (char *)malloc((ft_strlen(s) * sizeof(char) + 1));
+	if (!s_dup)
+		return (s_dup);
+	while (s[++i])
+		s_dup[i] = (*f)(i, s[i]);
+	s_dup[i] = '\0';
+	return (s_dup);
+}
