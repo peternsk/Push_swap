@@ -1,12 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_add_node_to_list.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/08 13:14:08 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/10/17 23:49:22 by peternsaka        #+#    #+#             */
+/*   Updated: 2023/10/18 00:36:57 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../push_swap.h"
+
+void	ft_add_node_to_list(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i] != '\0')
+	{
+		ft_split(str, ' ');
+	}
+}

@@ -10,15 +10,15 @@ INC_DIR 	= include
 SRCS_DIR 	= srcs
 OBJS_DIR 	= objs
 	
-PARSING 	= main
-UTILS 		= 
+PARSING 	= push_swap
+UTILS 		= ft_add_node_to_list
 
 SRCS 		= $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))
 
 OBJS 		= $(addprefix ${OBJS_DIR}/, $(subst srcs/,,$(SRCS:.c=.o)))
 
-LIBFT_PATH = include/53 w22e3r4r4libft
+LIBFT_PATH = include/libft
 LIBFT_LIB = ${LIBFT_PATH}/libft.a
 LIBFT_INC = ${LIBFT_PATH}/include
 
