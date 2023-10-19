@@ -11,7 +11,7 @@ SRCS_DIR 	= srcs
 OBJS_DIR 	= objs
 	
 PARSING 	= push_swap
-UTILS 		= ft_add_node_to_list
+UTILS 		= ft_add_node_to_list ft_allow_char
 
 SRCS 		= $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))

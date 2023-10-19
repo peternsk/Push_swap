@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_add_node_to_list.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 23:49:22 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/18 00:36:57 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/18 11:56:15 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	ft_add_node_to_list(char *str)
 
 	i = 0;
 	while(str[i] != '\0')
-	{
-		ft_split(str, ' ');
+	{ 
+		//ft_split(str, ' ');
+		printf("%c\n", str[i]);
+		i++;
 	}
 }

@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_sign_in_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/18 12:09:48 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/10/18 12:37:31 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/10/18 12:42:59 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-#include "libft/libft.h"
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <stdio.h>
-
-//double linked list
-typedef struct s_node
+void    ft_sign_in_str(char *str)
 {
-	struct t_node *prev;
-	int data;
-	struct t_node *next;
-} t_node;
+    int i;
 
-void	ft_add_node_to_list(char *str);
-void    ft_allow_char(char *str);
-
-#endif
+    i = 0;
+    if(!str)
+    
+}
