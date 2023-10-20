@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/18 12:09:48 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/19 22:12:17 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,15 @@ typedef struct s_node
 	struct t_node *next;
 } t_node;
 
-void	ft_add_node_to_list(char *str);
+typedef struct s_push_utils
+{
+	char **int_arr;
+} t_push_utils;
+
+t_push_utils	*create_push_utils(char *str);
+
+void	ft_add_node_to_list(char *str, t_push_utils *utils);
 void    ft_allow_char(char *str);
+void	ft_sign_in_str(char *str);
 
 #endif

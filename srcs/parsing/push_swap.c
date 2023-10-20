@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/18 12:11:38 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/19 21:43:20 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 int main(int argc, char **argv)
 {
+	t_push_utils *utils;
+
 	if(argc == 2)
 	{
-    	//ft_add_node_to_list(argv[1]);
 		ft_allow_char(argv[1]);
+		utils = create_push_utils(argv[1]);
+    	ft_add_node_to_list(argv[1], utils);
 	}
 	else
 	{

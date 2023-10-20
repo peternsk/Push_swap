@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sign_in_str.c                                   :+:      :+:    :+:   */
+/*   ft_struct.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 12:37:31 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/18 12:42:59 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/10/19 18:01:06 by peternsaka        #+#    #+#             */
+/*   Updated: 2023/10/19 21:36:26 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-void    ft_sign_in_str(char *str)
+t_push_utils	*create_push_utils(char *str)
 {
-    int i;
+	(void)str;
+	t_push_utils	*utils;
 
-    i = 0;
-    if(!str)
-    
+	utils = malloc(1 * sizeof(t_push_utils));
+	if (!utils)
+		return (NULL);
+	utils->int_arr = 0;
+	
+	return (utils);
 }
