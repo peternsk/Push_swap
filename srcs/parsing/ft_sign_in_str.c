@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_allow_char.c                                    :+:      :+:    :+:   */
+/*   ft_sign_in_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 11:32:06 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/19 21:44:33 by peternsaka       ###   ########.fr       */
+/*   Created: 2023/10/19 22:02:19 by peternsaka        #+#    #+#             */
+/*   Updated: 2023/10/19 22:32:26 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void    ft_allow_char(char *str)
+void	ft_sign_in_str(char *str)
 {
-    int i;
+	int sign;
+	int i;
 
-    i = 0;
-    if(!str)
-        return ;
-    while(str[i] != '\0')
-    {
-        if((str[i] >= 48 && str[i] <= 57) || str[i] == 32 || str[i] == 45 || str[i] == 43)
-        {
-            //printf("%c\n", str[i]);
-            i++;
-        }
-        else 
-            ft_exiting_prog(1, "char error");      
-    }
+	sign = 0;
+	i = 0;
+	if(!str)
+		return;
+	if(str[i] == '-' || str[i] == '+')
+	{
+		printf("sign at right place in string : %s\n", str);
+		sign++;
+		i++;
+	}
+	while(str[i] != '\0')
+	{
+		if(str[i] == '-' || str[i] == '+')
+			printf("sign error in string : %s\n", str);
+		i++;
+	}
+	if(sign > 1)
+		printf("sign error in string : %s\n", str);
 }

@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/19 15:15:50 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/20 11:45:17 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ typedef struct s_node
 	struct t_node	*next;
 }					t_node;
 
-
 typedef struct s_push_utils
 {
-	char			**int_arr;
-}					t_push_utils;
+	char **int_arr;
+} t_push_utils;
 
-void				ft_add_node_to_list(char *str);
-void				ft_allow_char(char *str);
+t_push_utils	*create_push_utils(char *str);
+
+void	ft_add_node_to_list(char *str, t_push_utils *utils);
+void    ft_allow_char(char *str);
+void	ft_sign_in_str(char *str);
 
 #endif

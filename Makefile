@@ -10,8 +10,8 @@ INC_DIR 	= include
 SRCS_DIR 	= srcs
 OBJS_DIR 	= objs
 	
-PARSING 	= push_swap
-UTILS 		= ft_add_node_to_list ft_allow_char
+PARSING 	= push_swap ft_sign_in_str
+UTILS 		= ft_add_node_to_list ft_allow_char ft_struct
 
 SRCS 		= $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))
