@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:18:22 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/25 12:00:41 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/25 16:55:05 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void    printlinked_list(t_node *head)
     while(tempo != NULL)
     {
         printf("%d -", tempo->data);
-        //printf("- %p", tempo->next);
         tempo = tempo->next;
     }
     printf("\n");
@@ -36,7 +35,13 @@ void    printlinked_list(t_node *head)
 
 t_node  *create_new_node(int data)
 {
-    4
+    t_node *new_node;
+    new_node = malloc(sizeof(t_node));
+    if(!new_node)
+        return(0);
+    new_node->data = data;
+    new_node->next = NULL;
+    return(new_node);
 }
 
 int main(void)
