@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 12:36:02 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/31 14:59:53 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 	int				data;
-	int				index;
 }					t_node;
 
 typedef struct s_push_utils
 {
 	char			**int_arr;
 	int				count_node;
+	int				median;
 }					t_push_utils;
 
 t_push_utils		*create_push_utils(void);
@@ -48,5 +48,6 @@ void				ft_allow_char(char *str);
 void				ft_sign_in_str(char *str);
 void				printstack(t_node *head);
 void				check_dup_data(t_node *head);
+void				is_stack_sorted(t_node *stack);
 
 #endif

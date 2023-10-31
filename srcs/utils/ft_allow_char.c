@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_allow_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:32:06 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/19 21:44:33 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/31 15:12:24 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ void    ft_allow_char(char *str)
         else 
             ft_exiting_prog(1, "char error");      
     }
+    printf("char ok!\n");
 }

@@ -12,7 +12,7 @@ OBJS_DIR 	= objs
 	
 PARSING 	= push_swap ft_sign_in_str
 UTILS 		= create_stack ft_allow_char ft_struct init_list printstack add_node_to_end \
-				count_node check_dup_data
+				count_node check_dup_data is_stack_sorted
 
 SRCS 		= $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))

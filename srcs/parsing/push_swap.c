@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 14:06:55 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/31 15:15:48 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,26 @@ int main(int argc, char **argv)
 	i = 1;
 	if(argc >= 2)
 	{
-		//funct_str
 		if(argc == 2)
 		{	
+			printf("--> in here 1\n");
+			//funct_str
 			var = create_push_utils();
-			var->int_arr = ft_split(argv[1], ' ');
 			
+			ft_allow_char(argv[1]);
+			var->int_arr = ft_split(argv[1], ' ');
 			ft_sign_in_str(var->int_arr[j]);
+			
+			printf("--> in here 2\n");
 			stack = create_stack(ft_atoi(argv[0]));
 			while(argv[++j] != NULL)
-				add_node_to_end(stack, atoi(argv[j]));
+				add_node_to_end(stack, ft_atoi(argv[j]));
 			printstack(stack);
 			//func2
-			check_dup_data(stack);
-			var->count_node = count_node(stack);
-			printf("node num %d\n", var->count_node);
+			// check_dup_data(stack);
+			// is_stack_sorted(stack);
+			// var->count_node = count_node(stack);
+			// printf("node num %d\n", var->count_node);
 		}
 		else
 		{
@@ -52,6 +57,7 @@ int main(int argc, char **argv)
 			printstack(stack);
 			//func2
 			check_dup_data(stack);
+			is_stack_sorted(stack);
 			var->count_node = count_node(stack);
 			printf("node num %d\n", var->count_node);
 			}
