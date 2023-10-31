@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_node_to_list.c                              :+:      :+:    :+:   */
+/*   ft_add_node_back.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 23:49:22 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/20 11:44:40 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/10/30 13:01:42 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/10/30 14:38:36 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_add_node_to_list(char *str, t_push_utils *utils)
+t_node  ft_add_node_back(t_node **head, t_node *new_node)
 {
-	int i;
-
-	i = 0;
-	utils->int_arr = ft_split(str, ' ');
-	while(utils->int_arr[i])
-	{ 
-		printf("%s\n", utils->int_arr[i]);
-		ft_sign_in_str(utils->int_arr[i]);
-		i++;
-	}
+    t_node *temp;
+    
+    if(new_node == NULL)
+    {
+        printf("non-existing list\n");
+    }
+    temp = *head;
+    if(*head)
+    {
+        while(temp->next)
+            temp = temp->next;
+        temp->next = new_node;
+        new_node->prev = temp;
+    }  
 }

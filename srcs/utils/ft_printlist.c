@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sign_in_str.c                                   :+:      :+:    :+:   */
+/*   ft_printlist.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 22:02:19 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/26 13:09:31 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/10/26 12:41:01 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/10/26 13:51:10 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_sign_in_str(char *str)
+void    printlinked_list(t_node *head)
 {
-	int sign;
-	int i;
-
-	sign = 0;
-	i = 0;
-	if (!str)
-		return ;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		sign++;
-		i++;
-	}
-	while (str[i] != '\0')
-	{
-		if (str[i] == '-' || str[i] == '+')
-			ft_exiting_prog(1, "wrong sign!\n");
-		i++;
-	}
-	if (sign > 1)
-		ft_exiting_prog(1, "too many signs!\n");
+    t_node *tempo = head;
+    
+    while(tempo)
+    {
+        printf("%d -", tempo->data);
+        tempo = tempo->next;
+    }
+    printf("\n");
 }
