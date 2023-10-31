@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 14:59:53 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/31 16:23:32 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,8 @@ void				ft_sign_in_str(char *str);
 void				printstack(t_node *head);
 void				check_dup_data(t_node *head);
 void				is_stack_sorted(t_node *stack);
+
+//moves
+void				move_sa(t_node *stack);
 
 #endif

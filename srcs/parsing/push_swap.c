@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 15:44:43 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/31 16:12:50 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int main(int argc, char **argv)
 			
 			ft_allow_char(argv[1]);
 			var->int_arr = ft_split(argv[1], ' ');
-			ft_sign_in_str(var->int_arr[j]);
 			
 			printf("--> in here 2\n");
+			ft_sign_in_str(var->int_arr[j]);
 			stack = create_stack(ft_atoi(var->int_arr[0]));
 			printf("--> in here 3\n");
 			while(argv[++j] != NULL)
-				add_node_to_end(stack, ft_atoi(argv[j]));
+				add_node_to_end(stack, ft_atoi(var->int_arr[j]));
 			printstack(stack);
 			//func2
 			check_dup_data(stack);
