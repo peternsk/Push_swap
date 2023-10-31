@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printlist.c                                     :+:      :+:    :+:   */
+/*   add_node_to_end.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 12:41:01 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/26 13:51:10 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/10/30 13:01:42 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/10/31 10:27:26 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void    printlinked_list(t_node *head)
+t_node	*add_node_to_end(t_node *head, int data)
 {
-    t_node *tempo = head;
-    
-    while(tempo)
-    {
-        printf("%d -", tempo->data);
-        tempo = tempo->next;
-    }
-    printf("\n");
+	t_node *tmp;
+	t_node *current;
+
+	tmp = malloc(sizeof(t_node));
+	tmp->prev = NULL;
+	tmp->data = data;
+	tmp->next = NULL;
+	current = head;
+	while(current->next != NULL)
+		current = current->next;
+	tmp->prev = current;
+	current->next = tmp;
+	return(head);
 }

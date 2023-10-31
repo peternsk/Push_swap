@@ -2,7 +2,7 @@
 #basic
 NAME    	=   push_swap
 CC      	=	gcc
-FLAGS  		=	-Wall -Werror -Wextra
+FLAGS  		=	-Wall -Werror -Wextra #-T{INC_DIR}
 RM      	=	rm -rf
 
 #folders
@@ -11,7 +11,8 @@ SRCS_DIR 	= srcs
 OBJS_DIR 	= objs
 	
 PARSING 	= push_swap ft_sign_in_str
-UTILS 		= ft_str_stack_a ft_arg_stack_a ft_allow_char ft_struct ft_create_node ft_printlist ft_add_node_back
+UTILS 		= create_stack ft_allow_char ft_struct init_list printstack add_node_to_end \
+				count_node check_dup_data
 
 SRCS 		= $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))

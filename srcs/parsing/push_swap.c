@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/30 12:48:04 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/31 14:06:55 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,53 @@
 
 int main(int argc, char **argv)
 {
-	t_push_utils *utils;
-	t_node *head = NULL;
+	t_push_utils *var;
+	t_node *stack = NULL;
 	
 	int	i;
+	int j;
 
-	i = 0;
-	if (argc < 2)
+	j = 0;
+	i = 1;
+	if(argc >= 2)
+	{
+		//funct_str
+		if(argc == 2)
+		{	
+			var = create_push_utils();
+			var->int_arr = ft_split(argv[1], ' ');
+			
+			ft_sign_in_str(var->int_arr[j]);
+			stack = create_stack(ft_atoi(argv[0]));
+			while(argv[++j] != NULL)
+				add_node_to_end(stack, atoi(argv[j]));
+			printstack(stack);
+			//func2
+			check_dup_data(stack);
+			var->count_node = count_node(stack);
+			printf("node num %d\n", var->count_node);
+		}
+		else
+		{
+			//funct_arg
+			while(argv[i])
+			{
+			var = create_push_utils();
+			stack = create_stack(ft_atoi(argv[1]));
+			while(argv[++i] != NULL)
+				add_node_to_end(stack, atoi(argv[i]));
+			printstack(stack);
+			//func2
+			check_dup_data(stack);
+			var->count_node = count_node(stack);
+			printf("node num %d\n", var->count_node);
+			}
+		}
+		return(EXIT_SUCCESS);
+	}
+	else
 	{
 		printf("missing or to o many arguments\n");
 		return(EXIT_FAILURE);
 	}
-	if(argc == 2)
-	{
-		ft_allow_char(argv[1]);
-		utils = create_push_utils(argv[1]);
-		//create
-    	ft_str_stack_a(argv[1], utils, &head);
-		printlinked_list(head);
-		printf("done\n");
-		
-	}
-	else
-	{
-		//technicly this while loop is going to be remplace by an other function
-		while(argv[i])
-		{
-			utils = create_push_utils(argv[1]);
-			//create
-			ft_arg_stack_a(argv[i], utils, &head);
-			printlinked_list(head);
-			i++;
-		}
-		printf("done\n");
-	}
-	return(EXIT_SUCCESS);
-	
 }
