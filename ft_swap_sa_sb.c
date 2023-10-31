@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:18:22 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/26 11:38:13 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/30 10:33:07 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,12 @@ void    printlinked_list(t_node *head)
     printf("\n");
 }
 
-t_node  *create_new_node(int data)
+t_node  *create_new_node(char data)
 {
+	if (head == NULL)
+	{
+		printf("hello\n");
+	}
     t_node *temp;
 	temp = malloc(sizeof(t_node));
 	temp->data = data;
@@ -50,7 +54,7 @@ int main(int argc, char **argv)
 	i = 0;
 
     t_node *head = NULL;
-	t_node *temp;
+	t_node *temp = NULL;
 
 	while(argv[i] != NULL)
 	{
