@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_sa_sb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:18:22 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 10:10:56 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/26 12:41:59 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <sys/_types.h> 
+#include "../../push_swap.h"
 
 typedef struct s_node
 {
@@ -34,12 +30,8 @@ void    printlinked_list(t_node *head)
     printf("\n");
 }
 
-t_node  *create_new_node(char data)
+t_node  *create_new_node(int data)
 {
-	if (head == NULL)
-	{
-		printf("hello\n");
-	}
     t_node *temp;
 	temp = malloc(sizeof(t_node));
 	temp->data = data;
@@ -47,22 +39,26 @@ t_node  *create_new_node(char data)
 	return(temp);
 }
 
-int main(int argc, char **argv)
-{
-	int i;
-	i = 0;
+// int main(int argc, char **argv)
+// {
+// 	int i;
+// 	i = 0;
+// 	int	number;
 
-    t_node *head = NULL;
-	t_node *temp = NULL;
+// 	(void)argc;
+//     t_node *head = NULL;
+// 	t_node *temp;
+	
 
-	while(argv[i] != NULL)
-	{
-		temp = create_new_node(argv[i]);
-		temp->next = head;
-		head  = temp;
-		i++;
-	}
-    printlinked_list(head);
+// 	while(argv[i] != NULL)
+// 	{
+// 		number = ft_atoi(argv[i]);
+// 		temp = create_new_node(number);
+// 		temp->next = head;
+// 		head  = temp;
+// 		i++;
+// 	}
+//     printlinked_list(head);
     
-    return(0);
-}
+//     return(0);
+// }
