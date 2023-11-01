@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/01 13:17:53 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/01 19:46:12 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int					count_node(t_node *head);
 
 t_node				*init_list(int data);
 t_node				*add_node_to_end(t_node *head, int data);
+t_node  			*init_stack(int arg_c, char **arg_v, t_node *stack, t_push_utils *var);
 
 
 //parse
