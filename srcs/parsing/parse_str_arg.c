@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_allow_char.c                                    :+:      :+:    :+:   */
+/*   parse_str_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 11:32:06 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/01 13:27:07 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/11/01 12:29:45 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/11/01 13:31:37 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void    ft_allow_char(char *str)
+void    parse_str_arg(int arg_n, t_push_utils *var, char **arg_v)
 {
     int i;
 
     i = 0;
-    if(!str)
-        return ;
-    while(str[i] != '\0')
+    if(arg_n == 2)
     {
-        if((str[i] >= 48 && str[i] <= 57) || str[i] == 32 || str[i] == 45 || str[i] == 43)
-            i++;
-        else 
-            ft_exiting_prog(1, "char error");      
+        ft_allow_char(arg_v[1]);
+		var->int_arr = ft_split(arg_v[1], ' ');
+        while(var->int_arr[i] != NULL)
+        {
+		    ft_sign_in_str(var->int_arr[i]);
+            i++;   
+        }
     }
+    else
+    {
+        while(arg_v[++i] != NULL)
+		{
+			ft_allow_char(arg_v[i]);
+			ft_sign_in_str(arg_v[i]);
+		}
+    }
+    printf("parse ok!\n");
 }

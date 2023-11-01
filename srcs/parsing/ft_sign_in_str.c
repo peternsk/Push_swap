@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 22:02:19 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/31 15:13:11 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/01 13:27:42 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ void	ft_sign_in_str(char *str)
 	}
 	if (sign > 1)
 		ft_exiting_prog(1, "too many signs!\n");
-	printf("sign ok!\n");
 }

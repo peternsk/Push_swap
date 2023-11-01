@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 16:23:32 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/01 13:17:53 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ int					count_node(t_node *head);
 t_node				*init_list(int data);
 t_node				*add_node_to_end(t_node *head, int data);
 
+
+//parse
+void    			parse_str_arg(int arg_n, t_push_utils *var, char **arg_v);
 void				ft_allow_char(char *str);
 void				ft_sign_in_str(char *str);
 void				printstack(t_node *head);
@@ -51,6 +54,8 @@ void				check_dup_data(t_node *head);
 void				is_stack_sorted(t_node *stack);
 
 //moves
-void				move_sa(t_node *stack);
+void				move_sa(t_node *stack_a);
+void				move_sb(t_node *stack_b);
+void				move_ss(t_node *stack_a, t_node *stack_b);
 
 #endif

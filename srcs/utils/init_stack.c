@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_allow_char.c                                    :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 11:32:06 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/01 13:27:07 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/11/01 13:34:17 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/11/01 13:42:46 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void    ft_allow_char(char *str)
+t_node  *init_stack(int arg_c,t_node *stack)
 {
-    int i;
-
-    i = 0;
-    if(!str)
-        return ;
-    while(str[i] != '\0')
-    {
-        if((str[i] >= 48 && str[i] <= 57) || str[i] == 32 || str[i] == 45 || str[i] == 43)
-            i++;
-        else 
-            ft_exiting_prog(1, "char error");      
-    }
+    
 }
