@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_sa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:14:41 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 16:30:53 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/01 00:08:28 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,17 @@
 
 #include "../../push_swap.h"
 
-void    move_sa(t_node *stack)
+void	move_sa(t_node *stack)
 {
-    
+    t_node *node_1;
+    t_node *node_2;
+
+	node_1 = stack;
+	node_2 = node_1->next;
+
+	node_1->prev = node_2;
+	node_2->prev = NULL;
+	node_1->next = node_2->next;
+	node_2->next = node_1;
+	printf("sa\n");
 }
