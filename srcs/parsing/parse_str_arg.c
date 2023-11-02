@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:29:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/01 13:31:37 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/02 10:15:55 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void    parse_str_arg(int arg_n, t_push_utils *var, char **arg_v)
     i = 0;
     if(arg_n == 2)
     {
-        ft_allow_char(arg_v[1]);
 		var->int_arr = ft_split(arg_v[1], ' ');
         while(var->int_arr[i] != NULL)
         {
 		    ft_sign_in_str(var->int_arr[i]);
+            ft_allow_char(var->int_arr[i]);
             i++;   
         }
     }

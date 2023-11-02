@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/02 01:28:31 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/02 10:37:57 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <string.h>
 # include <sys/_types.h>
 # include <unistd.h>
+# include <limits.h>
 
 //double linked list
 typedef struct s_node

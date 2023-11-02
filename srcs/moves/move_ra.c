@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_ra.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:23:32 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/02 01:41:20 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/02 09:59:25 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,11 @@
 
 void	move_ra(t_node *stack_a)
 {
-	t_node *tmp;
-	t_node *tmp_nxt;
-	t_node *tmp_last;
+    (void)stack_a;
+// 	t_node *tmp;
+// 	t_node *tmp_nxt;
+// 	t_node *tmp_last;
 
-	tmp = stack_a;
-	tmp_nxt = tmp->next;
+// 	tmp = stack_a;
+// 	tmp_nxt = tmp->next;
 }
