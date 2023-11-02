@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_dup_data.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:00:54 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 13:51:15 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/02 00:57:17 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,23 @@
 
 #include "../../push_swap.h"
 
-void    check_dup_data(t_node *head)
+bool    check_dup_data(t_node *stack)
 {
     t_node *tmp;
     t_node *current;
 
-    tmp = head;
+    tmp = stack;
     while(tmp->next != NULL)
     {
-        current = head;
+        current = stack;
         while(current != NULL)
         {
             if(tmp->data == current->data && tmp != current)
-                ft_exiting_prog(1, "error...duplicate data\n");
+                return(false);
             else
                 current = current->next;
         }
         tmp = tmp->next;
     }
+	return(true);
 }

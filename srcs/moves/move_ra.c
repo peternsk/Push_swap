@@ -1,49 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_pa.c                                          :+:      :+:    :+:   */
+/*   move_ra.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 11:33:33 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/02 01:23:06 by peternsaka       ###   ########.fr       */
+/*   Created: 2023/11/02 01:23:32 by peternsaka        #+#    #+#             */
+/*   Updated: 2023/11/02 01:41:20 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-    pa (push a): Take the first element at the top of b and put it at the top of a. 
-        Do nothing if b is empty.
-    pb (push b): Take the first element at the top of a and put it at the top of b.
-        Do nothing if a is empty.
+   ra (rotate a): Shift up all elements of stack a by 1.
+		The first element becomes the last one.
+	rb (rotate b): Shift up all elements of stack b by 1.
+		The first element becomes the last one.
 
-    
-    
         STACK A
         
             #####  <=   #####  <=   #####   <=  #####
             # 1 #       # 2 #       # 3 #       # 4 #
             #####  =>   #####  =>   #####   =>  #####
         
-        STACK B
-        
-            #####  <=   #####  <=   #####   <=  #####
-            # 1 #       # 2 #       # 3 #       # 4 #
-            #####  =>   #####  =>   #####   =>  #####
-
-    MOVE PA
-
-
         STACK A
         
-            #####  <=   #####  <=   #####   <=  #####   <=  #####
-            # 1 #       # 1 #       # 2 #       # 3 #       # 4 #
-            #####  =>   #####  =>   #####   =>  #####   =>  #####
-    
-        STACK B
-    
-            #####  <=   #####  <=   #####
-            # 2 #       # 3 #       # 4 #
-            #####  =>   #####  =>   #####
+            #####  <=   #####  <=   #####   <=  #####
+            # 2 #       # 3 #       # 4 #       # 1 #
+            #####  =>   #####  =>   #####   =>  #####
 */
 
+#include "../../push_swap.h"
 
+void	move_ra(t_node *stack_a)
+{
+	t_node *tmp;
+	t_node *tmp_nxt;
+	t_node *tmp_last;
+
+	tmp = stack_a;
+	tmp_nxt = tmp->next;
+}
