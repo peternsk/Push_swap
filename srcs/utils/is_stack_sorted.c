@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:10:59 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/31 14:43:16 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/02 13:48:01 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 #include "../../push_swap.h"
 
-void    is_stack_sorted(t_node *stack)
+bool    is_stack_sorted(t_node *stack)
 {
     t_node *node;
     
@@ -29,12 +29,8 @@ void    is_stack_sorted(t_node *stack)
     while(node && node->next)
     {
         if(node->data > node->next->data)
-        {
-            printf("stack not sorted\n");
-            return ;
-        }
+            return (false);
         node = node->next;
     }
-    printf("stack  sorted\n");
-    
+    return (true);
 }

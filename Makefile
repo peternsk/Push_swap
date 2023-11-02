@@ -2,36 +2,39 @@
 #basic
 NAME    	=   push_swap
 CC      	=	gcc
-FLAGS  		=	-Wall -Werror -Wextra #-T{INC_DIR}
+FLAGS  		=	-Wall -Werror -Wextra #-fsanitize=address -g
 RM      	=	rm -rf
 
 #folders
-INC_DIR 	= include
-SRCS_DIR 	= srcs
-OBJS_DIR 	= objs
+INC_DIR 	= 	include
+SRCS_DIR 	= 	srcs
+OBJS_DIR 	= 	objs
 	
-PARSING 	= push_swap ft_sign_in_str parse_str_arg
-UTILS 		= create_stack ft_allow_char ft_struct init_list printstack add_node_to_end \
-				count_node check_dup_data is_stack_sorted init_stack_a
+PARSING 	= 	push_swap ft_sign_in_str parse_str_arg
+UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
+				count_node check_dup_data is_stack_sorted init_stack_a small_algo \
 
-MOVES		= move_sa move_sb move_ss move_ra 
 
-SRCS 		= $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
+MOVES		= 	move_sa move_sb move_ss move_ra 
+
+SRCS 		= 	$(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS))) \
 				$(addsuffix .c, $(addprefix srcs/moves/, $(MOVES)))
 
-OBJS 		= $(addprefix ${OBJS_DIR}/, $(subst srcs/,,$(SRCS:.c=.o)))
+OBJS 		= 	$(addprefix ${OBJS_DIR}/, $(subst srcs/,,$(SRCS:.c=.o)))
 
-LIBFT_PATH = include/libft
-LIBFT_LIB = ${LIBFT_PATH}/libft.a
-LIBFT_INC = ${LIBFT_PATH}/include
+LIBFT_PATH 	= 	include/libft
+LIBFT_LIB 	= 	${LIBFT_PATH}/libft.a
+LIBFT_INC 	= 	${LIBFT_PATH}/include
 
-GREEN	= \033[32;1m
-CYAN	= \033[36;1m
-RED		= \033[0;31m
-BOLD	= \033[1m
-RESET	= \033[0m
-MAGENTA	=\033[0;95m
+#colors
+GREEN		= 	\033[32;1m
+CYAN		= 	\033[36;1m
+RED			= 	\033[0;31m
+BOLD		= 	\033[1m
+RESET		= 	\033[0m
+MAGENTA		=	\033[0;95m
+
 
 all: ${LIBFT_LIB} ${NAME}
 

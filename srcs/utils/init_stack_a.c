@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:34:17 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/02 00:11:18 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/02 11:46:50 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_node  *init_stack_a(int arg_c, char **arg_v, t_node *stack, t_push_utils *var)
 	if(arg_c == 2)
 	{
 		i = -1;
-		stack = create_stack(ft_atoi(var->int_arr[++i]));
+		stack = create_stack(stack, ft_atoi(var->int_arr[++i]));
 		while(var->int_arr[++i] != NULL)
 			add_node_to_end(stack, ft_atoi(var->int_arr[i]));
 		var->count_node = count_node(stack);
@@ -28,7 +28,7 @@ t_node  *init_stack_a(int arg_c, char **arg_v, t_node *stack, t_push_utils *var)
 	if(arg_c > 2)
 	{
 		j = 0;
-		stack = create_stack(ft_atoi(arg_v[++j]));
+		stack = create_stack(stack, ft_atoi(arg_v[++j]));
 		while(arg_v[++j] != NULL)
 			add_node_to_end(stack, atoi(arg_v[j]));
 		var->count_node = count_node(stack);

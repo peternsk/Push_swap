@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/02 10:37:57 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/02 14:59:14 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ typedef struct s_push_utils
 
 t_push_utils		*create_push_utils(void);
 
-t_node				*create_stack(int data);
+t_node				*create_stack(t_node *stack, int data);
 int					count_node(t_node *head);
 
-t_node				*init_list(int data);
 t_node				*add_node_to_end(t_node *head, int data);
 t_node  			*init_stack_a(int arg_c, char **arg_v, t_node *stack, t_push_utils *var);
 
@@ -53,7 +52,7 @@ void				ft_allow_char(char *str);
 void				ft_sign_in_str(char *str);
 void				printstack(t_node *head);
 bool    			check_dup_data(t_node *stack);
-void				is_stack_sorted(t_node *stack);
+bool   				is_stack_sorted(t_node *stack);
 
 //moves
 void				move_sa(t_node *stack_a);
@@ -61,4 +60,6 @@ void				move_sb(t_node *stack_b);
 void				move_ss(t_node *stack_a, t_node *stack_b);
 void				move_ra(t_node *stack_a);
 
+//algo
+t_node				*small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var);
 #endif

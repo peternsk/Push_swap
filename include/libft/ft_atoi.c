@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:21:50 by pnsaka            #+#    #+#             */
-/*   Updated: 2022/12/06 14:55:15 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/02 11:58:05 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	ft_atoi(const char *str)
 	if (!str)
 		return (0);
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-	{
 		i++;
-	}
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
