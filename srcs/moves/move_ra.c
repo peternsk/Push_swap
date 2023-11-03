@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_ra.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:23:32 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/02 16:23:15 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/03 07:50:05 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,39 @@
 
 #include "../../push_swap.h"
 
-void	move_ra(t_node *stack_a)
-{
-	t_node *node_1;
-	t_node *node_2;
-	t_node *node_last = NULL;
+// void	move_ra(t_node *stack_a)
+// {
+// 	t_node *node_1;
+// 	t_node *node_2;
+// 	t_node *node_last = NULL;
 
-	node_1 = stack_a;
-    printf(" node 1 %p\n", node_1->prev);
-    printf(" node 1 %p\n", node_1);
-    printf(" node 1 %p\n", node_1->next);
-	node_2 = node_1->next;
-    printf(" node 2 %p\n", node_2->prev);
-    printf(" node 2 %p\n", node_2);
-    printf(" node 2 %p\n", node_2->next);
-    while(node_1 != NULL)
-    {
-        node_1 = node_1->next;
-        printf(" node 1 %p\n", node_1);
-    }
-    node_last = node_1->prev;
-    printf(" node last %p\n", node_last->prev);
-    printf(" node last %p\n", node_last->next);
-    
-    printf(" node 1 %p\n", node_1);
-    printf(" node last %p\n", node_last);
+// 	node_1 = stack_a;
+// 	node_2 = node_1->next;
+// 	node_last = last_node(stack_a);
+   
+// 	 node_last->next = node_1;
+// 	 node_1->prev = node_last;
+// 	 node_1->next = NULL;
+// 	 node_2->prev = NULL;
+	
+//     printf("ra\n");
+// }
+
+void move_ra(t_node **stack_a, t_node *current)
+{
+	t_node *node_2;
+	t_node *node_last;
+
+    if (*stack_a == NULL || (*stack_a)->next == NULL) 
+        return;
+    current = *stack_a;
+    node_2 = current->next;
+    node_last = last_node(*stack_a);
+    *stack_a = node_2;
+
+   	node_last->next = current;
+	current->next = NULL;
+	current->prev = node_last;
+	node_2->prev = NULL;
     printf("ra\n");
 }

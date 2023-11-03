@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_algo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:56:28 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/02 14:46:52 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/03 09:21:16 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@
 t_node  *small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var)
 {
     (void)stack_b;
+	t_node *tmp = NULL;
+	
     if(var->count_node == 1)
         return (stack_a);
     if(var->count_node == 2)
@@ -54,12 +56,15 @@ t_node  *small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var)
     if(var->count_node == 3)
     {
         printf("algo de 3\n");   
-        printstack(stack_a);
-        move_ra(stack_a);
+        move_ra(&stack_a, tmp);
         printstack(stack_a);
     }
     if(var->count_node > 3 && var->count_node <= 5)
+	{
+        move_ra(&stack_a, tmp);
+        printstack(stack_a);
         printf("algo de 5\n");   
+	}
     return(stack_a);
 }
 

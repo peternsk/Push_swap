@@ -13,6 +13,7 @@ OBJS_DIR 	= 	objs
 PARSING 	= 	push_swap ft_sign_in_str parse_str_arg
 UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
 				count_node check_dup_data is_stack_sorted init_stack_a small_algo \
+				last_node
 
 
 MOVES		= 	move_sa move_sb move_ss move_ra 
