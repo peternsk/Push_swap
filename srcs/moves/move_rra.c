@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_rra.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:46:24 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/03 16:10:57 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/03 18:19:43 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,4 @@ void    move_rra(t_node **stack_a)
     current->prev = last;
     last->prev = NULL;
     printf("rra\n");
-    
 }
