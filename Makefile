@@ -13,14 +13,17 @@ OBJS_DIR 	= 	objs
 PARSING 	= 	push_swap ft_sign_in_str parse_str_arg
 UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
 				count_node check_dup_data is_stack_sorted init_stack_a small_algo \
-				last_node
+				last_node max_data max_data_pos
 
 
-MOVES		= 	move_sa move_sb move_ss move_ra 
+MOVES		= 	move_sa move_sb move_ss move_ra	move_rb
+
+ALGO		= 	algo_3_node algo_2_node
 
 SRCS 		= 	$(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS))) \
-				$(addsuffix .c, $(addprefix srcs/moves/, $(MOVES)))
+				$(addsuffix .c, $(addprefix srcs/moves/, $(MOVES))) \
+				$(addsuffix .c, $(addprefix srcs/algo/, $(ALGO)))
 
 OBJS 		= 	$(addprefix ${OBJS_DIR}/, $(subst srcs/,,$(SRCS:.c=.o)))
 
