@@ -16,7 +16,7 @@ UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
 				last_node max_data max_data_pos
 
 
-MOVES		= 	move_sa move_sb move_ss move_ra	move_rb
+MOVES		= 	move_sa move_sb move_ss move_ra	move_rb move_rra
 
 ALGO		= 	algo_3_node algo_2_node
 

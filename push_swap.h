@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/03 15:07:06 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/03 16:11:16 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,12 @@ bool				check_dup_data(t_node *stack);
 bool				is_stack_sorted(t_node *stack);
 
 //moves
-void				move_sa(t_node *stack_a);
+void				move_sa(t_node **stack_a);
 void				move_sb(t_node *stack_b);
 void				move_ss(t_node *stack_a, t_node *stack_b);
 void				move_ra(t_node **stack_a);
 void				move_rb(t_node **stack_b, t_node *current);
+void    			move_rra(t_node **stack_a);
 
 //algo
 t_node  			*small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var);

@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:22:14 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/03 12:40:18 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/03 15:37:38 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void    move_ss(t_node *stack_a, t_node *stack_b)
 {
     if(!stack_a || !stack_b)
         return ;
-    move_sa(stack_a);
+    move_sa(&stack_a);
     move_sb(stack_b);
     printf("ss\n");
 }
