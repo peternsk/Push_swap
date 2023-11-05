@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/03 22:00:47 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/04 11:29:40 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,11 @@ void				move_ss(t_node *stack_a, t_node *stack_b);
 void				move_ra(t_node **stack_a);
 void				move_rb(t_node **stack_b, t_node *current);
 void    			move_rra(t_node **stack_a);
-void				move_pa(t_node **stack_b, t_node **stack_a);
+void				move_pa(t_node *stack_b, t_node *stack_a);
+void				move_pb(t_node *stack_a, t_node *stack_b);
 
 //algo
 t_node  			*small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var);
-t_node				*algo_3_node(t_node	*stack);
-t_node  			*algo_2_node(t_node *stack_a);
+void  				*algo_2_node(t_node *stack_a);
+void				*algo_3_node(t_node	*stack_a);
 #endif

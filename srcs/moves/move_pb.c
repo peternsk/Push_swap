@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:27:06 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/03 22:30:36 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/03 23:56:29 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,19 @@
             # 2 #       # 3 #       # 4 #
             #####  =>   #####  =>   #####
 */
+
+#include "../../push_swap.h"
+
+void	move_pb(t_node *stack_a, t_node *stack_b)
+{
+	t_node *top_a;
+	int data;
+
+	top_a = stack_a;
+	data = top_a->data;
+	if(stack_b == NULL)
+		create_stack(stack_b, data);
+	else
+		add_node_to_front(&stack_b, data);
+	delete_node_front(&stack_a);
+}
