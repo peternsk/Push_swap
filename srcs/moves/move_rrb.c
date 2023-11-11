@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_rrb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:18:46 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/03 18:20:52 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/04 21:11:43 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,4 @@ void    move_rrb(t_node **stack_b)
     last->prev = NULL;
     printf("rrb\n");
 }
+

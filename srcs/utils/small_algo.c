@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   small_algo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:56:28 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/04 00:09:57 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/11 10:53:04 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_node	*small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var)
+void	small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var)
 {
 	(void)stack_b;
 	if (var->count_node == 1)
@@ -30,5 +30,4 @@ t_node	*small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var)
 		printf("algo de 5\n");
 	}
 	printstack(stack_a);
-	return (stack_a);
 }
