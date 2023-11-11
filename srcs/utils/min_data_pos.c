@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_3_node.c                                      :+:      :+:    :+:   */
+/*   min_data_pos.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 12:01:03 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/11 14:08:49 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/11/11 12:26:41 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/11/11 12:30:17 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	algo_3_node(t_node	*stack_a)
+int    min_data_pos(t_node *stack)
 {
-	(void)stack_a;
-	if (max_data_pos(stack_a) == 1 || is_stack_sorted(stack_a) == false)
-	{
-		move_sa(&stack_a);
-		return;
-	}
-	if (max_data_pos(stack_a) == 2)
-	{
-		move_rra(&stack_a);
-		if (is_stack_sorted(stack_a) == false)
-			move_sa(&stack_a);
-		return;
-	}
-	if (max_data_pos(stack_a) == 3 || is_stack_sorted(stack_a) == false)
-	{
-		move_sa(&stack_a);
-		return;
-	}
-	printstack(stack_a);
+    t_node  *current;
+    int min;
+    int pos;
+    
+    pos = 1;
+    min = min_data(stack);
+    current = stack;
+    while(current->data != min)
+    {
+        current = current->next;
+        pos++;
+    }
+    return(pos);
 }

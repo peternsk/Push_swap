@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/04 11:29:40 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/11 13:27:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int					count_node(t_node *head);
 t_node				*last_node(t_node *stack);
 int					max_data(t_node *stack);
 int					max_data_pos(t_node *stack);
+int     			min_data(t_node *stack);
+int    				min_data_pos(t_node *stack);
 
 t_node				*add_node_to_end(t_node *head, int data);
 t_node				*add_node_to_front(t_node **head, int data);
@@ -70,7 +72,9 @@ void				move_pa(t_node *stack_b, t_node *stack_a);
 void				move_pb(t_node *stack_a, t_node *stack_b);
 
 //algo
-t_node  			*small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var);
-void  				*algo_2_node(t_node *stack_a);
-void				*algo_3_node(t_node	*stack_a);
+void 				small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var);
+void  				algo_2_node(t_node *stack_a);
+void				algo_3_node(t_node	*stack_a);
+void    			algo_5_node(t_node *stack_a, t_node *stack_b);
+
 #endif
