@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse_str_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:29:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/02 10:15:55 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/05 19:23:33 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void    parse_str_arg(int arg_n, t_push_utils *var, char **arg_v)
+void    parse_str_arg(int arg_n, t_stack *var, char **arg_v)
 {
     int i;
 

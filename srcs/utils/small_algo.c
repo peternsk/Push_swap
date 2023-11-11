@@ -6,13 +6,13 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:56:28 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/04 00:09:57 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/05 19:23:33 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_node	*small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var)
+t_node	*small_algo(t_node *stack_a, t_node *stack_b, t_stack *var)
 {
 	(void)stack_b;
 	if (var->count_node == 1)

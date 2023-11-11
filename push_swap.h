@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/04 11:29:40 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/08 20:35:01 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,16 @@ typedef struct s_node
 	int				data;
 }					t_node;
 
-typedef struct s_push_utils
+typedef struct s_stack
 {
 	char			**int_arr;
 	int				count_node;
 	int				median;
-}					t_push_utils;
+	t_node			*a;
+	t_node			*b;
+}					t_stack;
 
-t_push_utils		*create_push_utils(void);
+t_stack				*create_push_utils(void);
 
 t_node				*create_stack(t_node *stack, int data);
 int					count_node(t_node *head);
@@ -49,10 +51,10 @@ t_node				*add_node_to_end(t_node *head, int data);
 t_node				*add_node_to_front(t_node **head, int data);
 t_node				*delete_node_front(t_node **stack);
 t_node				*init_stack_a(int arg_c, char **arg_v, t_node *stack,
-						t_push_utils *var);
+						t_stack *var);
 
 //parse
-void				parse_str_arg(int arg_n, t_push_utils *var, char **arg_v);
+void				parse_str_arg(int arg_n, t_stack *var, char **arg_v);
 void				ft_allow_char(char *str);
 void				ft_sign_in_str(char *str);
 void				printstack(t_node *head);
@@ -70,7 +72,7 @@ void				move_pa(t_node *stack_b, t_node *stack_a);
 void				move_pb(t_node *stack_a, t_node *stack_b);
 
 //algo
-t_node  			*small_algo(t_node *stack_a, t_node *stack_b, t_push_utils *var);
+t_node  			*small_algo(t_node *stack_a, t_node *stack_b, t_stack *var);
 void  				*algo_2_node(t_node *stack_a);
 void				*algo_3_node(t_node	*stack_a);
 #endif
