@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_algo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:56:28 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/12 01:18:02 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/12 11:12:13 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	small_algo(t_node *stack_a, t_node *stack_b, t_stack *var)
         algo_3_node(stack_a);
 	if (var->count_node == 4 || var->count_node == 5)
 		algo_5_node(stack_a, stack_b);
-	printstack(stack_a);
+	// printstack(stack_a);
 }

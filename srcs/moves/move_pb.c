@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_pb.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:27:06 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/12 00:15:46 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/12 11:25:13 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@
 
 void	move_pb(t_node **stack_a, t_node **stack_b)
 {
-	t_node *current;
+	t_node *top_a;
 
-	current = *stack_a;
+	top_a = *stack_a;
 	if(*stack_b == NULL)
-		*stack_b = create_stack(*stack_b, current->data);
+		*stack_b = create_stack(*stack_b, top_a->data);
 	else
-		add_node_to_front(stack_b, current->data);
+		add_node_to_front(stack_b, top_a->data);
 	delete_node_front(stack_a);
 	printf("pb\n");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/11 23:28:14 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/12 14:51:10 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ typedef struct s_stack
 	char			**int_arr;
 	int				count_node;
 	int				median;
+	t_node 			*a;
+	t_node 			*b;
+	
 }					t_stack;
 
 t_stack				*create_push_utils(void);
@@ -47,9 +50,9 @@ int					max_data_pos(t_node *stack);
 int     			min_data(t_node *stack);
 int    				min_data_pos(t_node *stack);
 
-t_node				*add_node_to_end(t_node *head, int data);
-t_node				*add_node_to_front(t_node **head, int data);
-t_node				*delete_node_front(t_node **stack);
+void				add_node_to_end(t_node *head, int data);
+void				add_node_to_front(t_node **head, int data);
+void				delete_node_front(t_node **stack);
 t_node				*init_stack_a(int arg_c, char **arg_v, t_node *stack,
 						t_stack *var);
 
@@ -68,7 +71,7 @@ void				move_ss(t_node *stack_a, t_node *stack_b);
 void				move_ra(t_node **stack_a);
 void				move_rb(t_node **stack_b, t_node *current);
 void    			move_rra(t_node **stack_a);
-void				move_pa(t_node *stack_b, t_node *stack_a);
+void				move_pa(t_node **stack_b, t_node **stack_a);
 void				move_pb(t_node **stack_a, t_node **stack_b);
 
 

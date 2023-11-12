@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   delete_node_front.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 21:28:51 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/03 22:22:55 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/12 14:43:38 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 
 #include "../../push_swap.h"
 
-t_node	*delete_node_front(t_node **stack)
+void	delete_node_front(t_node **stack)
 {
 	t_node *current;
 	t_node *next;
@@ -42,5 +42,4 @@ t_node	*delete_node_front(t_node **stack)
 	*stack = next;
 	current->next = NULL;
 	free(current);
-	return(*stack);
 }

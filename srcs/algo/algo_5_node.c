@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_5_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:23:50 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/12 00:21:00 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/12 14:40:12 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,8 @@ void    algo_5_node(t_node *stack_a, t_node *stack_b)
     }
 	algo_3_node(stack_a);
 	printstack(stack_a);
+	move_pa(&stack_b, &stack_a);
+	//move_pa(&stack_b, &stack_a);
+	printstack(stack_a);
+	printstack(stack_b);
 }
