@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/12 14:51:10 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/12 15:18:53 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,37 +42,36 @@ typedef struct s_stack
 
 t_stack				*create_push_utils(void);
 
-t_node				*create_stack(t_node *stack, int data);
-int					count_node(t_node *head);
-t_node				*last_node(t_node *stack);
-int					max_data(t_node *stack);
-int					max_data_pos(t_node *stack);
-int     			min_data(t_node *stack);
-int    				min_data_pos(t_node *stack);
+t_stack 			*create_stack(t_stack *stack, int data);
+int					count_node(t_stack *head);
+t_stack				*last_node(t_stack *stack);
+int					max_data(t_stack *stack);
+int					max_data_pos(t_stack *stack);
+int     			min_data(t_stack *stack);
+int    				min_data_pos(t_stack *stack);
 
-void				add_node_to_end(t_node *head, int data);
-void				add_node_to_front(t_node **head, int data);
-void				delete_node_front(t_node **stack);
-t_node				*init_stack_a(int arg_c, char **arg_v, t_node *stack,
-						t_stack *var);
+void				add_node_to_end(t_stack *head, int data);
+void				add_node_to_front(t_stack **head, int data);
+void				delete_node_front(t_stack **stack);
+t_stack  			*init_stack_a(int arg_c, char **arg_v, t_stack *stack);
 
 //parse
 void				parse_str_arg(int arg_n, t_stack *var, char **arg_v);
 void				ft_allow_char(char *str);
 void				ft_sign_in_str(char *str);
-void				printstack(t_node *head);
-bool				check_dup_data(t_node *stack);
-bool				is_stack_sorted(t_node *stack);
+void				printstack(t_stack *head);
+bool				check_dup_data(t_stack *stack);
+bool				is_stack_sorted(t_stack *stack);
 
 //moves
-void				move_sa(t_node **stack_a);
-void				move_sb(t_node *stack_b);
-void				move_ss(t_node *stack_a, t_node *stack_b);
-void				move_ra(t_node **stack_a);
-void				move_rb(t_node **stack_b, t_node *current);
-void    			move_rra(t_node **stack_a);
-void				move_pa(t_node **stack_b, t_node **stack_a);
-void				move_pb(t_node **stack_a, t_node **stack_b);
+void				move_sa(t_stack **stack_a);
+void				move_sb(t_stack *stack_b);
+void				move_ss(t_stack *stack_a, t_stack *stack_b);
+void				move_ra(t_stack **stack_a);
+void				move_rb(t_stack **stack_b, t_stack *current);
+void    			move_rra(t_stack **stack_a);
+void				move_pa(t_stack **stack_b, t_stack **stack_a);
+void				move_pb(t_stack **stack_a, t_stack **stack_b);
 
 
 //algo
