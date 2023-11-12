@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:27:06 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/03 23:56:29 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/12 00:15:46 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,15 @@
 
 #include "../../push_swap.h"
 
-void	move_pb(t_node *stack_a, t_node *stack_b)
+void	move_pb(t_node **stack_a, t_node **stack_b)
 {
-	t_node *top_a;
-	int data;
+	t_node *current;
 
-	top_a = stack_a;
-	data = top_a->data;
-	if(stack_b == NULL)
-		create_stack(stack_b, data);
+	current = *stack_a;
+	if(*stack_b == NULL)
+		*stack_b = create_stack(*stack_b, current->data);
 	else
-		add_node_to_front(&stack_b, data);
-	delete_node_front(&stack_a);
+		add_node_to_front(stack_b, current->data);
+	delete_node_front(stack_a);
+	printf("pb\n");
 }

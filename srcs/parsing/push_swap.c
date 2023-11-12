@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/06 23:24:08 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/11 18:29:49 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int main(int argc, char **argv)
 {
-	t_stack *stack;
+	t_node *stack_a = NULL;
+	t_node *stack_b = NULL;
 	t_stack *var;
 
 	if(argc >= 2)
@@ -28,13 +29,13 @@ int main(int argc, char **argv)
 			small_algo(stack_a, stack_b, var);
 		if(var->count_node > 5)
 		{
-			move_rra(&stack_a);
-			printstack(stack_a);
-			delete_node_front(&stack_a);
-			printf("\n");
-			printstack(stack_a);
-			move_sa(&stack_a);
-			printf("main algo\n");
+			// move_rra(&stack_a);
+			// printstack(stack_a);
+			// delete_node_front(&stack_a);
+			// printf("\n");
+			// printstack(stack_a);
+			// move_sa(&stack_a);
+			// printf("main algo\n");
 		}
 	}
 	else

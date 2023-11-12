@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_data.c                                         :+:      :+:    :+:   */
+/*   min_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 09:58:00 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/11 18:58:23 by peternsaka       ###   ########.fr       */
+/*   Created: 2023/11/11 12:15:53 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/11/11 18:57:57 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@
 
 #include "../../push_swap.h"
 
-int     max_data(t_node *stack)
+int     min_data(t_node *stack)
 {
         t_node  *current;
-        int     max_data;
+        int     min_data;
         
-        max_data = INT_MIN;
+        min_data = INT_MAX;
         current = stack;
         while(current)
         {
-                if(current->data > max_data)
-                        max_data = current->data;
+                if(current->data < min_data)
+                        min_data = current->data;
                 current = current->next;
         }
-        return(max_data);
+        return(min_data);
 }

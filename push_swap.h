@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/08 20:35:01 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/11 23:28:14 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ typedef struct s_stack
 	char			**int_arr;
 	int				count_node;
 	int				median;
-	t_node			*a;
-	t_node			*b;
 }					t_stack;
 
 t_stack				*create_push_utils(void);
@@ -46,6 +44,8 @@ int					count_node(t_node *head);
 t_node				*last_node(t_node *stack);
 int					max_data(t_node *stack);
 int					max_data_pos(t_node *stack);
+int     			min_data(t_node *stack);
+int    				min_data_pos(t_node *stack);
 
 t_node				*add_node_to_end(t_node *head, int data);
 t_node				*add_node_to_front(t_node **head, int data);
@@ -69,10 +69,12 @@ void				move_ra(t_node **stack_a);
 void				move_rb(t_node **stack_b, t_node *current);
 void    			move_rra(t_node **stack_a);
 void				move_pa(t_node *stack_b, t_node *stack_a);
-void				move_pb(t_node *stack_a, t_node *stack_b);
+void				move_pb(t_node **stack_a, t_node **stack_b);
+
 
 //algo
-t_node  			*small_algo(t_node *stack_a, t_node *stack_b, t_stack *var);
-void  				*algo_2_node(t_node *stack_a);
-void				*algo_3_node(t_node	*stack_a);
+void				small_algo(t_node *stack_a, t_node *stack_b, t_stack *var);
+void  				algo_2_node(t_node *stack_a);
+void				algo_3_node(t_node	*stack_a);
+void			    algo_5_node(t_node *stack_a, t_node *stack_b);
 #endif

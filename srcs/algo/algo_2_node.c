@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_2_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:05:26 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/04 18:32:25 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/11 11:52:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void  *algo_2_node(t_node *stack_a)
+void  algo_2_node(t_node *stack_a)
 {
     if (is_stack_sorted(stack_a) == true)
 			return;
