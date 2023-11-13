@@ -2,7 +2,7 @@
 #basic
 NAME    	=   push_swap
 CC      	=	gcc
-FLAGS  		=	-Wall -Werror -Wextra #-fsanitize=address -g
+FLAGS  		=	-Wall -Werror -Wextra -fsanitize=address -g
 RM      	=	rm -rf
 
 #folders

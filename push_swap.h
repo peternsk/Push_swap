@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/13 11:27:48 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:01:55 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int					min_data(t_node *stack);
 int					min_data_pos(t_node *stack);
 
 void				add_node_to_end(t_node *head, int data);
-void				add_node_to_front(t_node **head, int data);
+void 				add_node_to_front(t_node *stack, int data);
 void				delete_node_front(t_node **stack);
 t_node				*init_stack(int arg_c, char **arg_v, t_stack *stack);
 
@@ -70,8 +70,8 @@ void				move_ss(t_stack *stack);
 void				move_ra(t_stack *stack);
 void				move_rb(t_stack *stack);
 void				move_rra(t_stack *stack);
-void				move_pa(t_node **stack_from, t_node **stack_to);
-void				move_pb(t_node **stack_from, t_node **stack_to);
+void				move_pa(t_stack *stack);
+void				move_pb(t_stack *stack);
 
 //algo
 void				small_algo(t_stack *stack);

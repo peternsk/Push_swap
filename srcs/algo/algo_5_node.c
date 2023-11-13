@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:23:50 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/13 11:00:54 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:21:35 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,25 @@ void    algo_5_node(t_stack *stack)
     {   
         if(min_data_pos(stack->a) == 1)
 		{
-			move_pb(&stack->a, &stack->a);
+			move_pb(stack);
 			printstack(stack->a);
 		}
         if(min_data_pos(stack->a) > 1 && min_data_pos(stack->a) < 4)
-			move_ra(&stack->a);
+		{
+			move_ra (stack);
+			printstack(stack->a);
+		}
         if(min_data_pos(stack->a) == 4 || min_data_pos(stack->a) == 5)
-			move_rra(&stack->a);
+		{
+			move_rra(stack);
+			printstack(stack->a);
+		}
     }
-	algo_3_node(stack->a);
-	printstack(stack->a);
-	move_pa(&stack->a, &stack->a);
-	//move_pa(&stack->a, &stack->a);
-	printstack(stack->a);
+	algo_3_node(stack);
+	while(stack->b != NULL)
+	{
+		printstack(stack->a);
+		move_pa(stack);
+	}
 	printstack(stack->a);
 }

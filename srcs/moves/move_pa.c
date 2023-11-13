@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:33:33 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/13 10:44:22 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 15:59:38 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,15 @@
 
 //a verifier
 
-void	move_pa(t_node **stack_from, t_node **stack_to)
+void	move_pa(t_stack *stack)
 {
 	t_node *top_b;
 
-	top_b = *stack_from;
-	if(*stack_from == NULL)
+	top_b = stack->b;
+	if(stack->b == NULL)
 		return;
     else
-	    add_node_to_front(stack_to, top_b->data);
-	delete_node_front(stack_from);
+	    add_node_to_front(stack->a, top_b->data);
+	delete_node_front(&stack->b);
 	printf("pa\n");
 }
