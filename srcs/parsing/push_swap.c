@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/12 15:01:46 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:30:39 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int main(int argc, char **argv)
 
 	if(argc >= 2)
 	{
-		stack->a = create_push_utils();
+		stack = create_push_utils();
 		parse_str_arg(argc, stack, argv);
-		stack->a = init_stack_a(argc, argv, stack);
-		if(var->count_node <= 5)
-			small_algo(stack_a, stack_b, var);
-		if(var->count_node > 5)
+		stack->a = init_stack(argc, argv, stack);
+		if(stack->count_node <= 5)
+			small_algo(stack);
+		if(stack->count_node > 5)
 			printf("main algo\n");
 	}
 	else

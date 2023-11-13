@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:23:32 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/03 16:04:17 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:24:04 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@
 
 #include "../../push_swap.h"
 
-void	move_ra(t_node **stack_a)
+void	move_ra(t_stack *stack)
 {
 	t_node	*node_2;
 	t_node	*node_last;
 	t_node	*current;
 
-	if (*stack_a == NULL || (*stack_a)->next == NULL)
+	if (stack->a == NULL || (stack->a)->next == NULL)
 		return ;
-	current = *stack_a;
+	current = stack->a;
 	node_2 = current->next;
-	node_last = last_node(*stack_a);
-	*stack_a = node_2;
+	node_last = last_node(stack->a);
+	stack->a = node_2;
 	node_last->next = current;
 	current->next = NULL;
 	current->prev = node_last;

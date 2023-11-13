@@ -6,22 +6,22 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:01:03 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/12 14:47:24 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:38:49 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	algo_3_node(t_node	*stack_a)
+void	algo_3_node(t_stack *stack)
 {
-	while(is_stack_sorted(stack_a) == false)
+	while(is_stack_sorted(stack->a) == false)
 	{	
-		if (max_data_pos(stack_a) == 1)
-			move_ra(&stack_a);
-		else if (max_data_pos(stack_a) == 2)
-			move_rra(&stack_a);
-		else if (max_data_pos(stack_a) == 3)
-			move_sa(&stack_a);
+		if (max_data_pos(stack->a) == 1)
+			move_ra(stack);
+		else if (max_data_pos(stack->a) == 2)
+			move_rra(stack);
+		else if (max_data_pos(stack->a) == 3)
+			move_sa(stack);
 	}
-	printstack(stack_a);
+	printstack(stack->a);
 }

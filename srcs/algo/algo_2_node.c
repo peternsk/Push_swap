@@ -6,16 +6,16 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:05:26 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/11 11:52:30 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:39:24 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void  algo_2_node(t_node *stack_a)
+void  algo_2_node(t_stack *stack)
 {
-    if (is_stack_sorted(stack_a) == true)
+    if (is_stack_sorted(stack->a) == true)
 			return;
 		else
-			move_sa(&stack_a);
+			move_sa(stack);
 }

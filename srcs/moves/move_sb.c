@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:07:26 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/01 11:25:58 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:20:34 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@
 
 #include "../../push_swap.h"
 
-void	move_sb(t_node *stack_b)
+void	move_sb(t_stack *stack)
 {
 	t_node *tmp;
 	int swap;
 
-	tmp = stack_b;
+	tmp = stack->a;
 	swap = 0;
 	if (!tmp || tmp->next == NULL)
 		return ;

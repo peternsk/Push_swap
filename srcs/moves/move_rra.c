@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_rra.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:46:24 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/03 18:19:43 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/13 11:27:21 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@
 
 #include "../../push_swap.h"
 
-void    move_rra(t_node **stack_a)
+void    move_rra(t_stack *stack)
 {
     t_node  *current;
     t_node  *last;
     t_node  *before_last;
 
-    if (*stack_a == NULL || (*stack_a)->next == NULL)
+    if (stack->a == NULL || (stack->a)->next == NULL)
 		return ;
-    current = *stack_a;
-    last  = last_node(*stack_a);
+    current = stack->a;
+    last  = last_node(stack->a);
     before_last = last->prev;
-    *stack_a = last;
+    stack->a = last;
 
     before_last->next = NULL;
     last->next = current;

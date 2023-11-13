@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:22:14 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/03 15:37:38 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:38:08 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@
 
 #include "../../push_swap.h"
 
-void    move_ss(t_node *stack_a, t_node *stack_b)
+void    move_ss(t_stack *stack)
 {
-    if(!stack_a || !stack_b)
+    if(!stack->a || !stack->b)
         return ;
-    move_sa(&stack_a);
-    move_sb(stack_b);
+    move_sa(stack);
+    move_sb(stack);
     printf("ss\n");
 }
