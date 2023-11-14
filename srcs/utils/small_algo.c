@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:56:28 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/14 10:17:40 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/14 14:24:46 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	small_algo(t_stack *stack)
         algo_3_node(stack);
 	if (stack->count_node == 4 || stack->count_node == 5)
 		algo_5_node(stack);
-	// printstack(stack->a);
+	printstack(stack->a);
 }

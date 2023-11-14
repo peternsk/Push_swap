@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 20:57:48 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/14 11:28:22 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/14 14:23:43 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,11 @@
 
 void 	add_node_to_front(t_node **stack, int data)
 {
-	t_node *current;
-	t_node *tmp;
+	t_node *new_node;
 
-	tmp = malloc(sizeof(t_node));
-	tmp->prev = NULL;
-	tmp->data = data;
-	tmp->next = NULL;
-	current = *stack;
-	tmp->next = current;
-	current->prev = tmp;
-	stack = &tmp;
-	printf("in here\n");
+	new_node = malloc(sizeof(t_node));
+	new_node->prev = NULL;
+	new_node->data = data;
+	new_node->next = *stack;
+	*stack = new_node;
 }
