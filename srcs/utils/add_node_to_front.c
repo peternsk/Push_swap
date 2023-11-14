@@ -6,13 +6,13 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 20:57:48 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/13 16:02:28 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/14 10:30:57 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void 	add_node_to_front(t_node *stack, int data)
+void 	add_node_to_front(t_node **stack, int data)
 {
 	t_node *current;
 	t_node *tmp;
@@ -21,8 +21,8 @@ void 	add_node_to_front(t_node *stack, int data)
 	tmp->prev = NULL;
 	tmp->data = data;
 	tmp->next = NULL;
-	current = stack;
+	current = *stack;
 	tmp->next = current;
 	current->prev = tmp;
-	stack = tmp;
+	stack = &tmp;
 }

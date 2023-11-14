@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:01:03 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/13 11:38:49 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/14 10:20:37 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	algo_3_node(t_stack *stack)
 		else if (max_data_pos(stack->a) == 3)
 			move_sa(stack);
 	}
-	printstack(stack->a);
+	// printstack(stack->a);
 }

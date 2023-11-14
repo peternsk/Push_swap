@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:33:33 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/13 15:59:38 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/14 10:29:29 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	move_pa(t_stack *stack)
 	if(stack->b == NULL)
 		return;
     else
-	    add_node_to_front(stack->a, top_b->data);
+	    add_node_to_front(&stack->a, top_b->data);
 	delete_node_front(&stack->b);
 	printf("pa\n");
 }
