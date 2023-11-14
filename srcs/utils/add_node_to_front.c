@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 20:57:48 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/14 10:30:57 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/14 11:28:22 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void 	add_node_to_front(t_node **stack, int data)
 	tmp->next = current;
 	current->prev = tmp;
 	stack = &tmp;
+	printf("in here\n");
 }

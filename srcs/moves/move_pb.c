@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:27:06 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/14 09:28:50 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/14 11:23:24 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,16 @@ void	move_pb(t_stack *stack)
 	t_node *top_a;
 
 	top_a = stack->a;
-	if(stack->b == NULL)
+	if(!stack->b)
+    {
 		stack->b  = create_stack(stack->b, top_a->data);
+        printf("create\n");
+    }
 	else
+    {
 		add_node_to_front(&stack->a, top_a->data);
+        printf("add node\n");   
+    }
 	delete_node_front(&stack->a);
 	printf("pb\n");
 }
