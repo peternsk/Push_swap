@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/14 14:41:34 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/11/14 14:36:13 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/11/14 14:50:46 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int main(int argc, char **argv)
+void    main_algo(t_stack *stack)
 {
-	t_stack *stack;
-
-	if(argc >= 2)
-	{
-		stack = create_push_utils();
-		parse_str_arg(argc, stack, argv);
-		stack->a = init_stack(argc, argv, stack);
-		stack->b = NULL;
-		if(stack->count_node <= 5)
-			small_algo(stack);
-		if(stack->count_node > 5)
-			main_algo(stack);
-	}
-	else
-	{
-		printf("missing or to o many arguments\n");
-		return(EXIT_FAILURE);
-	}
+    while(count_node(stack->a) != 3)
+        move_pb(stack);
+    algo_3_node(stack);
+    printf("---stack a---\n");
+    printstack(stack->a);
+    printf("---stack b---\n");
+    printstack(stack->b);
 }
