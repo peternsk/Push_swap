@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/14 15:58:24 by peternsaka       ###   ########.fr       */
+/*   Created: 2023/11/14 15:46:44 by peternsaka        #+#    #+#             */
+/*   Updated: 2023/11/14 23:15:30 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int main(int argc, char **argv)
+void	main_algo(t_stack *stack)
 {
-	t_stack *stack;
-
-	if(argc >= 2)
-	{
-		stack = create_push_utils();
-		parse_str_arg(argc, stack, argv);
-		stack->a = init_stack(argc, argv, stack);
-		stack->b = NULL;
-		if(stack->count_node <= 5)
-			small_algo(stack);
-		if(stack->count_node > 5)
-			main_algo(stack);
-	}
-	else
-	{
-		printf("missing or to o many arguments\n");
-		return(EXIT_FAILURE);
-	}
+	(void)stack;
+	while (count_node(stack->a) != 3)
+		move_pb(stack);
+	algo_3_node(stack);
+	node_pos(stack->b);
+	stack->median = (count_node(stack->b) / 2);
+	count_move(stack->b, stack);
+	// printf("median %d\n", stack->median);
+	// printf("--- STACK A ---\n");
+	// printstack(stack->a);
+	// printf("--- STACK B ---\n");
+	// printstack(stack->b);
 }

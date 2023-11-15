@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/14 13:28:48 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/14 23:09:19 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 	int				data;
+	int				stack_pos;
 }					t_node;
 
 typedef struct s_stack
@@ -49,6 +50,8 @@ int					max_data(t_node *stack);
 int					max_data_pos(t_node *stack);
 int					min_data(t_node *stack);
 int					min_data_pos(t_node *stack);
+void				node_pos(t_node *stack);
+void				count_move(t_node *stack, t_stack *var);
 
 void				add_node_to_end(t_node *head, int data);
 void 				add_node_to_front(t_node **stack, int data);
@@ -78,4 +81,6 @@ void				small_algo(t_stack *stack);
 void				algo_2_node(t_stack *stack);
 void				algo_3_node(t_stack *stack);
 void				algo_5_node(t_stack *stack);
+void				main_algo(t_stack *stack);
+
 #endif
