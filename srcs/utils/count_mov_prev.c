@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   count_mov_prev.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/15 10:11:54 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/11/15 11:33:50 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/11/15 12:10:46 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int main(int argc, char **argv)
+void     count_mov_prev(t_node **stack)
 {
-	t_stack *stack;
+    t_node  *tmp;
+    int     steps;
 
-	if(argc >= 2)
-	{
-		stack = create_push_utils();
-		parse_str_arg(argc, stack, argv);
-		stack->a = init_stack(argc, argv, stack);
-		stack->b = NULL;
-		if(stack->count_node <= 5)
-			small_algo(stack);
-		if(stack->count_node > 5)
-			main_algo(stack);
-	}
-	else
-	{
-		printf("missing or to o many arguments\n");
-		return(EXIT_FAILURE);
-	}
+    tmp = *stack;
+    steps = 0;
+    while(tmp->prev != NULL)
+    {
+        steps++;
+        tmp->step_top_a = steps;
+        tmp = tmp->prev;
+    }
+    steps = 0;
 }

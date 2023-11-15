@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/14 14:38:59 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/15 12:46:18 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 	int				data;
+	int				stack_pos;
+	int				step_top_a;
+	int				step_top_b;
 }					t_node;
 
 typedef struct s_stack
@@ -49,6 +52,9 @@ int					max_data(t_node *stack);
 int					max_data_pos(t_node *stack);
 int					min_data(t_node *stack);
 int					min_data_pos(t_node *stack);
+void				chose_dir(t_node **stack, t_stack *var);
+void     			count_mov_prev(t_node **stack);
+void     			count_mov_next(t_node **stack);
 
 void				add_node_to_end(t_node *head, int data);
 void 				add_node_to_front(t_node **stack, int data);
@@ -78,5 +84,6 @@ void				small_algo(t_stack *stack);
 void				algo_2_node(t_stack *stack);
 void				algo_3_node(t_stack *stack);
 void				algo_5_node(t_stack *stack);
-void    			main_algo(t_stack *stack);
+void				main_algo(t_stack *stack);
+
 #endif
