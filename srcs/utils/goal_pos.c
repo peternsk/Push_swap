@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   goal_pos.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:02:42 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/15 16:07:16 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/16 07:48:05 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,10 @@
             # 20 #
             ######
 */
+
+#include "../../push_swap.h"
+
+void	goal_pos(t_node *stack, int data)
+{
+	
+}
