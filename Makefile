@@ -16,7 +16,7 @@ UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
 				count_node check_dup_data is_stack_sorted init_stack_a \
 				last_node max_data max_data_pos add_node_to_front delete_node_front \
 				min_data min_data_pos chose_dir count_mov_prev count_mov_next goal_pos \
-				max_bits 
+				max_bits set_index
 
 
 

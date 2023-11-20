@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 10:01:45 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/20 10:56:13 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void				chose_dir(t_node **stack, t_stack *var);
 void     			count_mov_prev(t_node **stack);
 void     			count_mov_next(t_node **stack);
 int					max_bits(t_node **stack);
+void    			set_index(t_node **stack);
 
 
 void				add_node_to_end(t_node *head, int data);
