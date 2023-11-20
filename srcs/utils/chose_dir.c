@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 22:47:14 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/16 12:46:21 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/17 17:00:02 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void		chose_dir(t_node **stack, t_stack *var)
 		if(tmp->stack_pos <= var->median)
 		{
 			tmp->step_top_b = 0 + i;
+			printf("--- NODE ---\n");
 			tmp->step_top_a = goal_pos(&var->a, tmp->data);
 			printf("\n");
-			printf("--- NODE ---\n");
 			printf("count with prev\n");
 			printf(" %d steps needed in B\n", tmp->step_top_b);
 			count_mov_prev(&tmp);
@@ -40,9 +40,9 @@ void		chose_dir(t_node **stack, t_stack *var)
 		{
 			--i;
 			tmp->step_top_b = (i - 0) - 1;
+			printf("--- NODE ---\n");
 			tmp->step_top_a = goal_pos(&var->a, tmp->data);
 			printf("\n");
-			printf("--- NODE ---\n");
 			printf("count with next\n");
 			printf(" %d steps needed in B\n", tmp->step_top_b);
 			count_mov_next(&tmp);
