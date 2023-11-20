@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/16 12:28:38 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 10:01:45 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_node
 	int				stack_pos;
 	int				step_top_a;
 	int				step_top_b;
+	int				index;
 }					t_node;
 
 typedef struct s_stack
@@ -38,8 +39,12 @@ typedef struct s_stack
 	char			**int_arr;
 	int				count_node;
 	int				median;
+	int				size;
+	int				max_bits;
 	t_node			*a;
 	t_node			*b;
+	int				i;
+	int				j;
 
 }					t_stack;
 
@@ -55,6 +60,8 @@ int					min_data_pos(t_node *stack);
 void				chose_dir(t_node **stack, t_stack *var);
 void     			count_mov_prev(t_node **stack);
 void     			count_mov_next(t_node **stack);
+int					max_bits(t_node **stack);
+
 
 void				add_node_to_end(t_node *head, int data);
 void 				add_node_to_front(t_node **stack, int data);
@@ -85,6 +92,6 @@ void				small_algo(t_stack *stack);
 void				algo_2_node(t_stack *stack);
 void				algo_3_node(t_stack *stack);
 void				algo_5_node(t_stack *stack);
-void				main_algo(t_stack *stack);
+void				radix_sort(t_stack *stack);
 
 #endif

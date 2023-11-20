@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   max_bits.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 10:32:44 by peternsaka       ###   ########.fr       */
+/*   Created: 2023/11/20 09:03:27 by peternsaka        #+#    #+#             */
+/*   Updated: 2023/11/20 09:42:30 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int main(int argc, char **argv)
+int	max_bits(t_node **stack)
 {
-	t_stack *stack;
+	t_node	*tmp;
+	int		max;
+	int		max_bits;
 
-	if(argc >= 2)
+	tmp = *stack;
+	max = tmp->index;
+	max_bits = 0;
+	while (tmp)
 	{
-		stack = create_push_utils();
-		parse_str_arg(argc, stack, argv);
-		stack->a = init_stack(argc, argv, stack);
-		stack->b = NULL;
-		if(stack->count_node <= 5)
-			small_algo(stack);
-		if(stack->count_node > 5)
-		{
-			//set_index
-			radix_sort(stack);
-		}
+		if (tmp->index > max)
+			max = tmp->index;
+		tmp = tmp->next;
 	}
-	else
-	{
-		printf("missing or to o many arguments\n");
-		return(EXIT_FAILURE);
-	}
+	while ((max >> max_bits) != 0)
+		max_bits++;
+	return (max_bits);
 }
