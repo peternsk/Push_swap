@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:18:22 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/26 12:41:59 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 15:58:50 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,3 @@ t_node  *create_new_node(int data)
 	temp->next = NULL;
 	return(temp);
 }
-
-// int main(int argc, char **argv)
-// {
-// 	int i;
-// 	i = 0;
-// 	int	number;
-
-// 	(void)argc;
-//     t_node *head = NULL;
-// 	t_node *temp;
-	
-
-// 	while(argv[i] != NULL)
-// 	{
-// 		number = ft_atoi(argv[i]);
-// 		temp = create_new_node(number);
-// 		temp->next = head;
-// 		head  = temp;
-// 		i++;
-// 	}
-//     printlinked_list(head);
-    
-//     return(0);
-// }

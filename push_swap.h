@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 10:56:13 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 16:22:15 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_stack
 
 t_stack				*create_push_utils(void);
 
-t_node				*create_stack(t_node *stack, int data);
+t_node				*create_stack(t_node *stack, int data, int index);
 int					count_node(t_node *head);
 t_node				*last_node(t_node *stack);
 int					max_data(t_node *stack);
@@ -58,14 +58,13 @@ int					max_data_pos(t_node *stack);
 int					min_data(t_node *stack);
 int					min_data_pos(t_node *stack);
 void				chose_dir(t_node **stack, t_stack *var);
-void     			count_mov_prev(t_node **stack);
-void     			count_mov_next(t_node **stack);
+void				count_mov_prev(t_node **stack);
+void				count_mov_next(t_node **stack);
 int					max_bits(t_node **stack);
-void    			set_index(t_node **stack);
-
+void				set_index(t_node *stack, int size);
 
 void				add_node_to_end(t_node *head, int data);
-void 				add_node_to_front(t_node **stack, int data);
+void				add_node_to_front(t_node **stack, int data, int index);
 void				delete_node_front(t_node **stack);
 t_node				*init_stack(int arg_c, char **arg_v, t_stack *stack);
 int					goal_pos(t_node **stack, int data);

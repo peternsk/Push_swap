@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:29:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/12 15:00:34 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 15:57:56 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ void    parse_str_arg(int arg_n, t_stack *stack, char **arg_v)
 			ft_sign_in_str(arg_v[i]);
 		}
     }
-    printf("parse ok!\n");
 }

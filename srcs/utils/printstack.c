@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:41:01 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/03 15:10:55 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 14:52:43 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	printstack(t_node *head)
 {
-    t_node *tempo;
+    t_node *tmp;
     
-    tempo = head;
-    while(tempo)
+    tmp = head;
+    while(tmp)
     {
-        printf("%d\n", tempo->data);
-        tempo = tempo->next;
+        printf("data %d --- index %d\n", tmp->data, tmp->index);
+        tmp = tmp->next;
     }
 }

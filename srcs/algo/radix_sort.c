@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:46:44 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/20 10:05:00 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/20 15:57:18 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	radix_sort(t_stack *stack)
 	stack->i = -1;
 	tmp = stack->a;
 	stack->size = count_node(tmp);
-	stack->max_bits = get_max_bits(stack->a);
+	stack->max_bits = max_bits(&stack->a);
 	while (++stack->i < stack->max_bits)
 	{
 		stack->j = 0;

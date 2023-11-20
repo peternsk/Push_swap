@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:41:48 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 10:57:06 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 15:59:41 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,45 @@
 
 #include "../../push_swap.h"
 
-void    set_index(t_node **stack)
-{
-    t_node *tmp;
-    int tmp_max;
-    int max_indx;
+// void    set_index(t_node **stack)
+// {   
+// 	t_node	*tmp;
+// 	int		index;
 
-    tmp = *stack;
-    tmp_max = 0;
-    max_indx = count_node(tmp);
-    while(tmp)
-    {
-        if()
-        tmp = tmp->next;
-    }
-    
+// 	index = 0;
+//     tmp = *stack;
+// 	while (tmp)
+// 	{
+//         if(tmp->data != -1)
+//             printf("yessssssssss\n");
+// 		tmp->index = index++;
+//         tmp = tmp->next;
+//     }
+// }
+
+void	set_index(t_node *stack, int size)
+{
+	t_node	*tmp;
+	int		min;
+	int		i;
+
+	i = 0;
+	while (size--)
+	{
+		min = 2147483647;
+		tmp = stack;
+		while (tmp)
+		{
+			if (tmp->data < min && tmp->index == -1)
+				min = tmp->data;
+			tmp = tmp->next;
+		}
+		tmp = stack;
+		while (tmp)
+		{
+			if (tmp->data == min && tmp->index == -1)
+				tmp->index = i++;
+			tmp = tmp->next;
+		}
+	}
 }
