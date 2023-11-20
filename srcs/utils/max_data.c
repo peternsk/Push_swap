@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   max_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:58:00 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/11 18:58:23 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/20 17:53:44 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@
 
 #include "../../push_swap.h"
 
-int     max_data(t_node *stack)
+int	max_data(t_node *stack)
 {
-        t_node  *current;
-        int     max_data;
-        
-        max_data = INT_MIN;
-        current = stack;
-        while(current)
-        {
-                if(current->data > max_data)
-                        max_data = current->data;
-                current = current->next;
-        }
-        return(max_data);
+	t_node *current;
+	int max_data;
+
+	max_data = INT_MIN;
+	current = stack;
+	while (current)
+	{
+		if (current->data > max_data)
+			max_data = current->data;
+		current = current->next;
+	}
+	return (max_data);
 }

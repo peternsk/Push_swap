@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   last_node.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:38:54 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/03 07:34:33 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/11/20 17:53:28 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_node	*last_node(t_node *stack)
 	t_node *tmp;
 
 	tmp = stack;
-	while(tmp->next != NULL)
+	while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
 	}

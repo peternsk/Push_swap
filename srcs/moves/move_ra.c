@@ -6,28 +6,9 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:23:32 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/13 11:24:04 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 17:49:43 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-    ra (rotate a): Shift up all elements of stack a by 1.
-		The first element becomes the last one.
-    rb (rotate b): Shift up all elements of stack b by 1.
-		The first element becomes the last one.
-
-        STACK A
-        
-            #####  <=   #####  <=   #####   <=  #####
-            # 1 #       # 2 #       # 3 #       # 4 #
-            #####  =>   #####  =>   #####   =>  #####
-        
-        STACK A
-        
-            #####  <=   #####  <=   #####   <=  #####
-            # 2 #       # 3 #       # 4 #       # 1 #
-            #####  =>   #####  =>   #####   =>  #####
-*/
 
 #include "../../push_swap.h"
 

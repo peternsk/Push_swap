@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 09:03:27 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/20 13:49:22 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 17:53:33 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	max_bits(t_node **stack)
 {
-	t_node	*tmp;
-	int		max;
-	int		max_bits;
+	t_node *tmp;
+	int max;
+	int max_bits;
 
 	tmp = *stack;
 	max = tmp->index;

@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:41:48 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 15:59:41 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 17:54:04 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include "../../push_swap.h"
 
 // void    set_index(t_node **stack)
-// {   
+// {
 // 	t_node	*tmp;
 // 	int		index;
 
@@ -39,9 +39,9 @@
 
 void	set_index(t_node *stack, int size)
 {
-	t_node	*tmp;
-	int		min;
-	int		i;
+	t_node *tmp;
+	int min;
+	int i;
 
 	i = 0;
 	while (size--)

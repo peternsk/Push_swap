@@ -6,48 +6,17 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:22:14 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/13 11:38:08 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 17:51:09 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-    ss = this move will swap the data of the first two nodes of stack a and b.
-
-    STACK A
-    
-        #####  <=   #####  <=   #####   <=  #####
-        # 1 #       # 2 #       # 3 #       # 4 #
-        #####  =>   #####  =>   #####   =>  #####
-
-    MOVE_SA
-
-        #####  <=   #####  <=   #####   <=  #####
-        # 2 #       # 1 #       # 3 #       # 4 #
-        #####  =>   #####  =>   #####   =>  #####
-
-
-    STACK B
-    
-        #####  <=   #####  <=   #####   <=  #####
-        # 5 #       # 6 #       # 7 #       # 8 #
-        #####  =>   #####  =>   #####   =>  #####
-
-    MOVE_SB
-
-        #####  <=   #####  <=   #####   <=  #####
-        # 6 #       # 5 #       # 7 #       # 8 #
-        #####  =>   #####  =>   #####   =>  #####
-
-        ==> Data switch
-*/
-
 #include "../../push_swap.h"
 
-void    move_ss(t_stack *stack)
+void	move_ss(t_stack *stack)
 {
-    if(!stack->a || !stack->b)
-        return ;
-    move_sa(stack);
-    move_sb(stack);
-    printf("ss\n");
+	if (!stack->a || !stack->b)
+		return ;
+	move_sa(stack);
+	move_sb(stack);
+	printf("ss\n");
 }
