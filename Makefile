@@ -16,13 +16,14 @@ UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
 				count_node check_dup_data is_stack_sorted init_stack_a \
 				last_node max_data max_data_pos add_node_to_front delete_node_front \
 				min_data min_data_pos chose_dir count_mov_prev count_mov_next goal_pos \
-				
+				max_bits 
+
 
 
 
 MOVES		= 	move_sa move_sb move_ss move_ra	move_rb move_rra move_pa move_pb
 
-ALGO		= 	small_algo algo_3_node algo_2_node algo_5_node main_algo
+ALGO		= 	small_algo algo_3_node algo_2_node algo_5_node radix_sort
 
 SRCS 		= 	$(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS))) \

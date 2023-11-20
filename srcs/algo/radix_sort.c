@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_algo.c                                        :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:46:44 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/16 12:27:57 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/20 10:05:00 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	main_algo(t_stack *stack)
+void	radix_sort(t_stack *stack)
 {
-	while (count_node(stack->a) != 3)
-		move_pb(stack);
-	algo_3_node(stack);
-	stack->median = (count_node(stack->b) / 2);
-	printf("median %d\n", stack->median);
-	chose_dir(&stack->b, stack);
-	printf("--- STACK A ---\n");
-	printstack(stack->a);
-	printf("--- STACK B ---\n");
-	printstack(stack->b);
+	t_node	*tmp;
+
+	stack->i = -1;
+	tmp = stack->a;
+	stack->size = count_node(tmp);
+	stack->max_bits = get_max_bits(stack->a);
+	while (++stack->i < stack->max_bits)
+	{
+		stack->j = 0;
+		while (stack->j++ < stack->size)
+		{
+			tmp = stack->a;
+			if (((tmp->index >> stack->i) & 1) == 1)
+				move_ra(stack);
+			else
+				move_pb(stack);
+		}
+		while (count_node(stack->b) != 0)
+			move_pa(stack);
+	}
 }
