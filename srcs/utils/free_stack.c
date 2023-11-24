@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_pb.c                                          :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 22:27:06 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/11/24 13:29:00 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/11/24 13:49:02 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/11/24 14:15:31 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	move_pb(t_stack *stack)
+void	free_stack(t_node **lst)
 {
-	t_node	*top_a;
+	t_node	*clr_node;
 
-	top_a = stack->a;
-	if (!stack->b)
-		stack->b = create_stack(stack->b, top_a->data, top_a->index);
-	else
-		add_node_to_front(&stack->b, top_a->data, top_a->index);
-	delete_node_front(&stack->a);
-	printf("pb\n");
+	if (!*lst)
+		return ;
+	while (*lst != 0)
+	{
+		clr_node = (*lst)->next;
+		free(*lst);
+		(*lst) = clr_node;
+	}
+	(*lst) = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:34:17 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 17:53:15 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/24 15:34:42 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_node	*init_stack(int arg_c, char **arg_v, t_stack *stack)
 		stack->count_node = count_node(stack->a);
 	}
 	if (check_dup_data(stack->a) == false)
-		ft_exiting_prog(1, "error...duplicate data\n");
+		ft_exiting_prog("error...duplicate data\n");
+	free(stack->int_arr);
 	return (stack->a);
 }

@@ -6,13 +6,13 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:29:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 17:51:26 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/24 15:24:58 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	parse_str_arg(int arg_n, t_stack *stack, char **arg_v)
+bool	parse_str_arg(int arg_n, t_stack *stack, char **arg_v)
 {
 	int	i;
 
@@ -22,17 +22,20 @@ void	parse_str_arg(int arg_n, t_stack *stack, char **arg_v)
 		stack->int_arr = ft_split(arg_v[1], ' ');
 		while (stack->int_arr[i] != NULL)
 		{
-			ft_sign_in_str(stack->int_arr[i]);
-			ft_allow_char(stack->int_arr[i]);
-			i++;
+			if((ft_sign_in_str(stack->int_arr[i]) == true && (ft_allow_char(stack->int_arr[i]) == true)))
+				i++;
+			else
+				return(false);
 		}
 	}
 	else
 	{
 		while (arg_v[++i] != NULL)
 		{
-			ft_allow_char(arg_v[i]);
-			ft_sign_in_str(arg_v[i]);
+			if((ft_allow_char(arg_v[i]) == true) && (ft_sign_in_str(arg_v[i]) == true));
+			else
+				return(false);
 		}
 	}
+	return(true);
 }

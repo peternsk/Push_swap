@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:00:54 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 17:51:59 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:12:08 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 bool	check_dup_data(t_node *stack)
 {
-	t_node *tmp;
-	t_node *current;
+	t_node	*tmp;
+	t_node	*current;
 
 	tmp = stack;
 	while (tmp->next != NULL)

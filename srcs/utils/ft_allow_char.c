@@ -6,24 +6,27 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:32:06 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 17:53:08 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/24 15:28:37 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_allow_char(char *str)
+bool	ft_allow_char(char *str)
 {
 	int	i;
 
 	i = 0;
 	if (!str)
-		return ;
+		return(false);
 	while (str[i] != '\0')
 	{
 		if ((str[i] >= 48 && str[i] <= 57) || str[i] == 45 || str[i] == 43)
 			i++;
 		else
-			ft_exiting_prog(1, "char error");
+			return(false);	
 	}
+	if (strlen(str) == 1 && (str[0] == 45 || str[0] == 43))
+		return (false);
+	return(true);
 }

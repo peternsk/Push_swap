@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:46:24 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 17:54:59 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:10:59 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	move_rra(t_stack *stack)
 {
-	t_node  *current;
-	t_node  *last;
-	t_node  *before_last;
+	t_node	*current;
+	t_node	*last;
+	t_node	*before_last;
 
 	if (stack->a == NULL || (stack->a)->next == NULL)
 		return ;

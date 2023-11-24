@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 17:03:09 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/24 15:25:34 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void				delete_node_front(t_node **stack);
 t_node				*init_stack(int arg_c, char **arg_v, t_stack *stack);
 
 //parse
-void				parse_str_arg(int arg_n, t_stack *var, char **arg_v);
-void				ft_allow_char(char *str);
-void				ft_sign_in_str(char *str);
+bool				parse_str_arg(int arg_n, t_stack *var, char **arg_v);
+bool				ft_allow_char(char *str);
+bool				ft_sign_in_str(char *str);
 void				printstack(t_node *head);
 bool				check_dup_data(t_node *stack);
 bool				is_stack_sorted(t_node *stack);
@@ -85,5 +85,8 @@ void				algo_2_node(t_stack *stack);
 void				algo_3_node(t_stack *stack);
 void				algo_5_node(t_stack *stack);
 void				radix_sort(t_stack *stack);
+
+//free
+void				free_stack(t_node **lst);
 
 #endif
