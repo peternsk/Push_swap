@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:30:31 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/14 14:48:25 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:12:37 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 int	count_node(t_node *head)
 {
-	int count = 0;
+	int	count;
 
-	while(head != NULL)
+	count = 0;
+	while (head != NULL)
 	{
 		count++;
 		head = head->next;
 	}
-	return(count);
+	return (count);
 }

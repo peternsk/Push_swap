@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 16:22:15 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/24 15:25:34 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 	int				data;
-	int				stack_pos;
-	int				step_top_a;
-	int				step_top_b;
 	int				index;
 }					t_node;
 
@@ -38,7 +35,6 @@ typedef struct s_stack
 {
 	char			**int_arr;
 	int				count_node;
-	int				median;
 	int				size;
 	int				max_bits;
 	t_node			*a;
@@ -57,9 +53,6 @@ int					max_data(t_node *stack);
 int					max_data_pos(t_node *stack);
 int					min_data(t_node *stack);
 int					min_data_pos(t_node *stack);
-void				chose_dir(t_node **stack, t_stack *var);
-void				count_mov_prev(t_node **stack);
-void				count_mov_next(t_node **stack);
 int					max_bits(t_node **stack);
 void				set_index(t_node *stack, int size);
 
@@ -67,12 +60,11 @@ void				add_node_to_end(t_node *head, int data);
 void				add_node_to_front(t_node **stack, int data, int index);
 void				delete_node_front(t_node **stack);
 t_node				*init_stack(int arg_c, char **arg_v, t_stack *stack);
-int					goal_pos(t_node **stack, int data);
 
 //parse
-void				parse_str_arg(int arg_n, t_stack *var, char **arg_v);
-void				ft_allow_char(char *str);
-void				ft_sign_in_str(char *str);
+bool				parse_str_arg(int arg_n, t_stack *var, char **arg_v);
+bool				ft_allow_char(char *str);
+bool				ft_sign_in_str(char *str);
 void				printstack(t_node *head);
 bool				check_dup_data(t_node *stack);
 bool				is_stack_sorted(t_node *stack);
@@ -93,5 +85,8 @@ void				algo_2_node(t_stack *stack);
 void				algo_3_node(t_stack *stack);
 void				algo_5_node(t_stack *stack);
 void				radix_sort(t_stack *stack);
+
+//free
+void				free_stack(t_node **lst);
 
 #endif

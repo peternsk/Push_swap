@@ -3,36 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 15:58:09 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/24 22:25:30 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack *stack;
+	t_stack	*stack;
 
-	if(argc >= 2)
+	if (argc >= 2)
 	{
 		stack = create_push_utils();
-		parse_str_arg(argc, stack, argv);
+		if(parse_str_arg(argc, stack, argv) == false)
+			return(ft_putstr_fd("Error", 2), free(stack), EXIT_FAILURE);
 		stack->a = init_stack(argc, argv, stack);
-		stack->b = NULL;
-		if(stack->count_node <= 5)
-			small_algo(stack);
-		if(stack->count_node > 5)
+		if (check_dup_data(stack->a) == true)
 		{
-			set_index(stack->a, count_node(stack->a));
-			radix_sort(stack);
+			stack->b = NULL;
+			if (stack->count_node <= 5)
+				small_algo(stack);
+			if (stack->count_node > 5)
+				radix_sort(stack);
+			free_stack(&stack->a);
+			free(stack);
 		}
+		else
+			ft_putstr_fd("Error", 2);
 	}
 	else
-	{
-		printf("missing or to o many arguments\n");
-		return(EXIT_FAILURE);
-	}
+		return (EXIT_FAILURE);
 }

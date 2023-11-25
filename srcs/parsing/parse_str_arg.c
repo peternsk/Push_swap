@@ -3,36 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   parse_str_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:29:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/20 15:57:56 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/24 22:06:14 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void    parse_str_arg(int arg_n, t_stack *stack, char **arg_v)
+bool	parse_str_arg(int arg_n, t_stack *stack, char **arg_v)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if(arg_n == 2)
-    {
+	i = 0;
+	if (arg_n == 2)
+	{
 		stack->int_arr = ft_split(arg_v[1], ' ');
-        while(stack->int_arr[i] != NULL)
-        {
-		    ft_sign_in_str(stack->int_arr[i]);
-            ft_allow_char(stack->int_arr[i]);
-            i++;   
-        }
-    }
-    else
-    {
-        while(arg_v[++i] != NULL)
+		while (stack->int_arr[i] != NULL)
 		{
-			ft_allow_char(arg_v[i]);
-			ft_sign_in_str(arg_v[i]);
+			if((ft_sign_in_str(stack->int_arr[i]) == false || (ft_allow_char(stack->int_arr[i]) == false)))
+				return(false);
+			i++;
 		}
-    }
+	}
+	else
+	{
+		while (arg_v[++i] != NULL)
+		{
+			if((ft_allow_char(arg_v[i]) == false) || (ft_sign_in_str(arg_v[i]) == false))
+				return(false);;
+		}
+	}
+	return(true);
 }
