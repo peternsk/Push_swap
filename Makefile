@@ -22,7 +22,7 @@ UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
 
 MOVES		= 	move_sa move_sb move_ss move_ra	move_rb move_rra move_pa move_pb
 
-ALGO		= 	small_algo algo_3_node algo_2_node algo_5_node radix_sort
+ALGO		= 	small_algo algo_3_node algo_2_node algo_5_node radix_sort algos
 
 SRCS 		= 	$(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS))) \

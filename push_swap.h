@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/24 15:25:34 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/24 22:34:11 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void				algo_2_node(t_stack *stack);
 void				algo_3_node(t_stack *stack);
 void				algo_5_node(t_stack *stack);
 void				radix_sort(t_stack *stack);
+void				algos(t_stack *stack);
 
 //free
 void				free_stack(t_node **lst);
