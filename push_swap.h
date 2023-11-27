@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/24 15:25:34 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/27 15:47:27 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_node
 typedef struct s_stack
 {
 	char			**int_arr;
+	int				tab_size;
+	long int		*val_tab;
 	int				count_node;
 	int				size;
 	int				max_bits;
@@ -55,11 +57,13 @@ int					min_data(t_node *stack);
 int					min_data_pos(t_node *stack);
 int					max_bits(t_node **stack);
 void				set_index(t_node *stack, int size);
+bool				int_max_value(long int value);
 
 void				add_node_to_end(t_node *head, int data);
 void				add_node_to_front(t_node **stack, int data, int index);
 void				delete_node_front(t_node **stack);
 t_node				*init_stack(int arg_c, char **arg_v, t_stack *stack);
+void   				tap_str_to_tab_int(t_stack *stack);
 
 //parse
 bool				parse_str_arg(int arg_n, t_stack *var, char **arg_v);
@@ -85,6 +89,7 @@ void				algo_2_node(t_stack *stack);
 void				algo_3_node(t_stack *stack);
 void				algo_5_node(t_stack *stack);
 void				radix_sort(t_stack *stack);
+void				algos(t_stack *stack);
 
 //free
 void				free_stack(t_node **lst);

@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/24 15:48:49 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/27 15:46:31 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,13 @@ int	main(int argc, char **argv)
 	if (argc >= 2)
 	{
 		stack = create_push_utils();
-		if(parse_str_arg(argc, stack, argv) == true)
-			stack->a = init_stack(argc, argv, stack);
+		if (parse_str_arg(argc, stack, argv) == false)
+			return(ft_putstr_fd("Error", 2), free(stack), 1);
+		tap_str_to_tab_int(stack);
+		stack->a = init_stack(argc, argv, stack);
 		if (check_dup_data(stack->a) == true)
 		{
-			stack->b = NULL;
-			if (stack->count_node <= 5)
-				small_algo(stack);
-			if (stack->count_node > 5)
-			{
-				set_index(stack->a, count_node(stack->a));
-				radix_sort(stack);
-			}	
+			algos(stack);
 			free_stack(&stack->a);
 			free(stack);
 		}

@@ -2,7 +2,7 @@
 #basic
 NAME    	=   push_swap
 CC      	=	gcc
-FLAGS  		=	-Wall -Werror -Wextra -g #-fsanitize=address
+FLAGS  		=	-Wall -Werror -Wextra -g -fsanitize=address
 RM      	=	rm -rf
 
 #folders
@@ -15,14 +15,14 @@ PARSING 	= 	push_swap ft_sign_in_str parse_str_arg
 UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
 				count_node check_dup_data is_stack_sorted init_stack_a \
 				last_node max_data max_data_pos add_node_to_front delete_node_front \
-				min_data min_data_pos max_bits set_index free_stack \
+				min_data min_data_pos max_bits set_index free_stack tap_str_to_tab_int \
 
 
 
 
 MOVES		= 	move_sa move_sb move_ss move_ra	move_rb move_rra move_pa move_pb
 
-ALGO		= 	small_algo algo_3_node algo_2_node algo_5_node radix_sort
+ALGO		= 	small_algo algo_3_node algo_2_node algo_5_node radix_sort algos
 
 SRCS 		= 	$(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  			$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS))) \
