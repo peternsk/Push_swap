@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tap_str_to_tab_int.c                               :+:      :+:    :+:   */
+/*   arg_2_int.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 14:18:14 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/29 16:15:57 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/11/29 09:47:28 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/11/29 16:28:00 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-bool	tap_str_to_tab_int(t_stack *stack, int argc, char **argv)
+bool    arg_2_int(t_stack *stack)
 {
-	int	i;
+    int i;
 
-	i = 0;
-	if (argc == 2)
-    {
-        if(arg_2_int(stack) == false)
-            return(false);
-    }
-	if (argc > 2)
-    {
-        if(arg_multi_int(stack, argv) == false)
-            return(false);
-    }
+    i = 0;
+    stack->val_tab = (long int *)malloc(stack->tab_size * sizeof(long int));
+	if (!stack->val_tab)
+		return (false);
+	if (!stack->int_arr)
+		return (printf("miss int_arr\n"), false);
+	while (i < stack->tab_size)
+	{
+		stack->val_tab[i] = ft_atoi(stack->int_arr[i]);
+		if (stack->val_tab[i] < INT_MIN || stack->val_tab[i] > INT_MAX)
+			return (false);
+		i++;
+	}
+	free_2d_arr(stack->int_arr);
 	return (true);
 }

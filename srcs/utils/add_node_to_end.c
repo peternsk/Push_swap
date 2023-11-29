@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:01:42 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/24 15:06:06 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/29 09:28:36 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	add_node_to_end(t_node *head, int data)
 		current->next = tmp;
 	}
 	else
-		ft_exiting_prog("Error int value..");
+		return ;
 }

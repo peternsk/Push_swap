@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:29:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/28 13:35:33 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/29 09:34:53 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ bool	parse_str_arg(int arg_n, t_stack *stack, char **arg_v)
 	if (arg_n == 2)
 	{
 		stack->int_arr = ft_split(arg_v[1], ' ');
-		if(!stack->int_arr)
-			return(NULL);
+		if (!stack->int_arr)
+			return (NULL);
 		while (stack->int_arr[i] != NULL)
 		{
-			if((ft_sign_in_str(stack->int_arr[i]) == false || (ft_allow_char(stack->int_arr[i]) == false)))
-				return(false);
+			if ((ft_sign_in_str(stack->int_arr[i]) == false
+					|| (ft_allow_char(stack->int_arr[i]) == false)))
+				return (false);
 			i++;
 		}
 		stack->tab_size = i;
@@ -34,12 +35,11 @@ bool	parse_str_arg(int arg_n, t_stack *stack, char **arg_v)
 	{
 		while (arg_v[++i] != NULL)
 		{
-			if((ft_allow_char(arg_v[i]) == false) || (ft_sign_in_str(arg_v[i]) == false))
-				return(false);;
+			if ((ft_allow_char(arg_v[i]) == false)
+				|| (ft_sign_in_str(arg_v[i]) == false))
+				return (false);
 		}
 		stack->tab_size = i - 1;
 	}
-	if(!stack->int_arr)
-		printf("yem mon chum !!\n");
-	return(true);
+	return (true);
 }

@@ -2,7 +2,7 @@
 #basic
 NAME    	=   push_swap
 CC      	=	gcc
-FLAGS  		=	-Wall -Werror -Wextra -g -fsanitize=address
+FLAGS  		=	-Wall -Werror -Wextra -g #-fsanitize=address
 RM      	=	rm -rf
 
 #folders
@@ -16,6 +16,7 @@ UTILS 		= 	create_stack ft_allow_char ft_struct printstack add_node_to_end \
 				count_node check_dup_data is_stack_sorted init_stack_a \
 				last_node max_data max_data_pos add_node_to_front delete_node_front \
 				min_data min_data_pos max_bits set_index free_stack tap_str_to_tab_int \
+				arg_2_int arg_multi_int free_2d_arr
 
 
 

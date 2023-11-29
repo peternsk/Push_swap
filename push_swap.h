@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/28 16:18:47 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/29 16:26:58 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,9 @@ void				add_node_to_end(t_node *head, int data);
 void				add_node_to_front(t_node **stack, int data, int index);
 void				delete_node_front(t_node **stack);
 t_node				*init_stack(int arg_c, char **arg_v, t_stack *stack);
-bool    			tap_str_to_tab_int(t_stack *stack, int argc);
+bool				tap_str_to_tab_int(t_stack *stack, int argc, char **argv);
+bool			    arg_2_int(t_stack *stack);
+bool   				arg_multi_int(t_stack *stack, char **argv);
 
 //parse
 bool				parse_str_arg(int arg_n, t_stack *var, char **arg_v);
@@ -93,5 +95,7 @@ void				algos(t_stack *stack);
 
 //free
 void				free_stack(t_node **lst);
+void				free_2d_arr(char **arr);
+
 
 #endif
