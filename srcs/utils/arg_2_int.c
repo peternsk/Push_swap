@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_2_int.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:47:28 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/29 16:28:00 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/11/29 18:36:30 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ bool    arg_2_int(t_stack *stack)
 			return (false);
 		i++;
 	}
-	free_2d_arr(stack->int_arr);
+	//free_2d_arr(stack->int_arr);
 	return (true);
 }
