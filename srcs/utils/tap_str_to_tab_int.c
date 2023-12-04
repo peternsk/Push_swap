@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tap_str_to_tab_int.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 14:18:14 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/29 18:34:55 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/12/04 12:54:08 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ bool	tap_str_to_tab_int(t_stack *stack, int argc, char **argv)
         if(arg_multi_int(stack, argv) == false)
             return(false);
     }
+    free(stack->int_arr);
 	return (true);
 }

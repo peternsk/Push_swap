@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:34:17 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/11/29 10:22:44 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/04 12:56:31 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_node	*init_stack(int arg_c, char **arg_v, t_stack *stack)
 	{
 		i = -1;
 		stack->a = create_stack(stack->a, stack->val_tab[++i], -1);
-		while (stack->int_arr[++i] != NULL)
+		while (stack->val_tab[++i] != '\0')
 			add_node_to_end(stack->a, stack->val_tab[i]);
 		stack->count_node = count_node(stack->a);
 	}
@@ -33,6 +33,5 @@ t_node	*init_stack(int arg_c, char **arg_v, t_stack *stack)
 			add_node_to_end(stack->a, stack->val_tab[j]);
 		stack->count_node = count_node(stack->a);
 	}
-	free(stack->int_arr);
 	return (stack->a);
 }
