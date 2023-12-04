@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:47:30 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/04 13:25:17 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:04:58 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	arg_multi_int(t_stack *stack, char **argv)
 
 	i = 0;
 	j = 0;
-	stack->val_tab = (long int *)malloc(stack->tab_size * sizeof(long int));
+	stack->val_tab = (long int *)malloc((stack->tab_size + 1) * sizeof(long int));
 	if (!stack->val_tab)
 		return (false);
 	while (++i <= stack->tab_size)
@@ -28,5 +28,6 @@ bool	arg_multi_int(t_stack *stack, char **argv)
 		if (stack->val_tab[i] < INT_MIN || stack->val_tab[i] > INT_MAX)
 			return (false);
 	}
+	stack->val_tab[i] = '\0';
 	return (true);
 }
