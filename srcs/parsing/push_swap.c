@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/04 11:35:02 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/04 13:57:22 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 		{
 			algos(stack);
 			free_stack(&stack->a);
+			free(stack->val_tab);
 			free(stack);
 		}
 	}

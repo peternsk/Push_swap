@@ -6,18 +6,18 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:47:28 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/04 11:35:33 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/04 13:54:21 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-bool    arg_2_int(t_stack *stack)
+bool	arg_2_int(t_stack *stack)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    stack->val_tab = (long int *)malloc(stack->tab_size * sizeof(long int));
+	i = 0;
+	stack->val_tab = (long int *)malloc(stack->tab_size * sizeof(long int));
 	if (!stack->val_tab)
 		return (false);
 	if (!stack->int_arr)
