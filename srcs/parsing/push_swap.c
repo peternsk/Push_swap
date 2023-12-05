@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/04 14:32:54 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/04 22:05:43 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,16 @@ int	main(int argc, char **argv)
 		if (tap_str_to_tab_int(stack, argc, argv) == false)
 			return (ft_putstr_fd("Error int", 2), free(stack->val_tab),
 				free(stack), EXIT_FAILURE);
-		stack->a = init_stack(argc, argv, stack);
-		if(is_stack_sorted(stack->a) == false)
+		stack->a = init_stack(argc, stack);
+		if(is_stack_sorted(stack->a) == true)
 			return(0);
-		if (check_dup_data(stack->a) == true)
+		if (check_dup_data(stack->a) == false)
 		{
 			algos(stack);
 			free_stack(&stack->a);
 			free(stack->val_tab);
 			free(stack);
 		}
-		else
-			printf("hello\n");
 	}
 	else
 		return (EXIT_FAILURE);

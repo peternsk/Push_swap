@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:14:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/04 14:02:23 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/04 21:04:01 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ bool				int_max_value(long int value);
 void				add_node_to_end(t_node *head, int data);
 void				add_node_to_front(t_node **stack, int data, int index);
 void				delete_node_front(t_node **stack);
-t_node				*init_stack(int arg_c, char **arg_v, t_stack *stack);
+t_node				*init_stack(int arg_c, t_stack *stack);
 bool				tap_str_to_tab_int(t_stack *stack, int argc, char **argv);
 bool				arg_2_int(t_stack *stack);
 bool				arg_multi_int(t_stack *stack, char **argv);
@@ -73,7 +73,7 @@ bool				ft_allow_char(char *str);
 bool				ft_sign_in_str(char *str);
 void				printstack(t_node *head);
 bool				check_dup_data(t_node *stack);
-bool				is_stack_sorted(t_node *stack);
+bool 				is_stack_sorted(const t_node *stack);
 
 //moves
 void				move_sa(t_stack *stack);
