@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:12:32 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/04 22:05:43 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/12/04 22:25:32 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int argc, char **argv)
 			free(stack->val_tab);
 			free(stack);
 		}
+		printf("duplicated data\n");
 	}
 	else
 		return (EXIT_FAILURE);
