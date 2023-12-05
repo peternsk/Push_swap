@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:47:28 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/05 15:20:10 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/05 15:34:38 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ bool	arg_2_int(t_stack *stack)
 	int	i;
 
 	i = 0;
-	stack->val_tab = (long int *)malloc(stack->tab_size * sizeof(long int));
+	stack->val_tab = (long int *)malloc((stack->tab_size + 1) * sizeof(long int));
 	if (!stack->val_tab)
 		return (false);
 	if (!stack->int_arr)
@@ -31,6 +31,7 @@ bool	arg_2_int(t_stack *stack)
 		if (stack->val_tab[i] < INT_MIN || stack->val_tab[i] > INT_MAX)
 		{
 			free(stack->val_tab);
+			free_2d_arr(stack->int_arr);
 			return (false);
 		}
 		i++;
